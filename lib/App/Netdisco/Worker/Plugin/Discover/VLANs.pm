@@ -37,48 +37,70 @@ register_worker({ phase => 'main', driver => 'snmp' }, sub {
   my $device_ports = vars->{'device_ports'}
     || { map {($_->port => $_)} $device->ports->all };
 
-  my $i_vlan            = $snmp->i_vlan;
-  my $i_vlan_membership = $snmp->i_vlan_membership;
-  my $i_vlan_type       = $snmp->i_vlan_type;
-  my $interfaces        = $snmp->interfaces;
+  my $i_vlan              = $snmp->i_vlan;
+  my $i_vlan_membership   = $snmp->i_vlan_membership;
+  my $i_vlan_membership_u = $snmp->i_vlan_membership_untagged;
+  my $i_vlan_type         = $snmp->i_vlan_type;
+  my $interfaces          = $snmp->interfaces;
 
   # build device port vlans suitable for DBIC
   my @portvlans = ();
-  foreach my $entry (keys %$i_vlan_membership) {
-      my %port_vseen = ();
-      my $port = $interfaces->{$entry} or next;
 
-      if (!defined $device_ports->{$port}) {
-          debug sprintf ' [%s] vlans - local port %s already skipped, ignoring',
-            $device->ip, $port;
-          next;
-      }
+  foreach my $entry (keys %$i_vlan) {
+    my $port = $interfaces->{$entry} || next;
+
+    if (!(defined $device_ports->{$port})) {
+      debug sprintf ' [%s] vlans - local port %s already skipped, ignoring',
+        $device->ip, $port;
+      next;
+    }
+    if ((defined $i_vlan->{$entry}) and !(defined $i_vlan_membership->{$entry}) and ($i_vlan->{$entry} eq $i_vlan_membership_u->{$entry}[0])) {
+      push @portvlans, {
+        port => $port,
+        vlan => $i_vlan->{$entry},
+        native => 't',
+        vlantype => $i_vlan_type->{$entry},
+        last_discover => \'now()',
+      };
+      next if $v_seen{$i_vlan->{$entry}};
+
+      # also add an unnamed vlan to the device
+      push @devicevlans, {
+        vlan => $i_vlan->{$entry},
+        description => (sprintf "VLAN %d", $i_vlan->{$entry}),
+        last_discover => \'now()',
+      };
+      ++$v_seen{$i_vlan->{$entry}};
+    } elsif (defined $i_vlan_membership->{$entry}) {
+      my $type = $i_vlan_type->{$entry};
+      my %port_vseen = ();
 
       my $type = $i_vlan_type->{$entry};
 
       foreach my $vlan (@{ $i_vlan_membership->{$entry} }) {
-          next unless defined $vlan and $vlan;
-          next if ++$port_vseen{$vlan} > 1;
+        next unless defined $vlan and $vlan;
+        next if ++$port_vseen{$vlan} > 1;
 
-          my $native = ((defined $i_vlan->{$entry}) and ($vlan eq $i_vlan->{$entry})) ? "t" : "f";
-          push @portvlans, {
-              port => $port,
-              vlan => $vlan,
-              native => $native,
-              vlantype => $type,
-              last_discover => \'now()',
-          };
+        my $native = ((defined $i_vlan->{$entry}) and ($vlan eq $i_vlan->{$entry})) ? "t" : "f";
+        push @portvlans, {
+          port => $port,
+          vlan => $vlan,
+          native => $native,
+          vlantype => $type,
+          last_discover => \'now()',
+        };
 
-          next if $v_seen{$vlan};
+        next if $v_seen{$vlan};
 
-          # also add an unnamed vlan to the device
-          push @devicevlans, {
-              vlan => $vlan,
-              description => (sprintf "VLAN %d", $vlan),
-              last_discover => \'now()',
-          };
-          ++$v_seen{$vlan};
-      }
+        # also add an unnamed vlan to the device
+        push @devicevlans, {
+          vlan => $vlan,
+          description => (sprintf "VLAN %d", $vlan),
+          last_discover => \'now()',
+        };
+        ++$v_seen{$vlan};
+       }
+    }
   }
 
   schema('netdisco')->txn_do(sub {
