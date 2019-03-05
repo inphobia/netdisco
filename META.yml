@@ -37,7 +37,7 @@ provides:
     file: lib/App/Netdisco/Configuration.pm
   App::Netdisco::DB:
     file: lib/App/Netdisco/DB.pm
-    version: '54'
+    version: '55'
   App::Netdisco::DB::ExplicitLocking:
     file: lib/App/Netdisco/DB/ExplicitLocking.pm
   App::Netdisco::DB::Result::Admin:
@@ -72,6 +72,8 @@ provides:
     file: lib/App/Netdisco/DB/Result/DeviceSkip.pm
   App::Netdisco::DB::Result::DeviceVlan:
     file: lib/App/Netdisco/DB/Result/DeviceVlan.pm
+  App::Netdisco::DB::Result::DeviceVrf:
+    file: lib/App/Netdisco/DB/Result/DeviceVrf.pm
   App::Netdisco::DB::Result::Log:
     file: lib/App/Netdisco/DB/Result/Log.pm
   App::Netdisco::DB::Result::NetmapPositions:
@@ -168,6 +170,8 @@ provides:
     file: lib/App/Netdisco/DB/ResultSet/DevicePortSsid.pm
   App::Netdisco::DB::ResultSet::DevicePower:
     file: lib/App/Netdisco/DB/ResultSet/DevicePower.pm
+  App::Netdisco::DB::ResultSet::DeviceVrf:
+    file: lib/App/Netdisco/DB/ResultSet/DeviceVrf.pm
   App::Netdisco::DB::ResultSet::Node:
     file: lib/App/Netdisco/DB/ResultSet/Node.pm
   App::Netdisco::DB::ResultSet::NodeIp:
@@ -300,6 +304,8 @@ provides:
     file: lib/App/Netdisco/Web/Plugin/Device/Ports.pm
   App::Netdisco::Web::Plugin::Device::Vlans:
     file: lib/App/Netdisco/Web/Plugin/Device/Vlans.pm
+  App::Netdisco::Web::Plugin::Device::Vrfs:
+    file: lib/App/Netdisco/Web/Plugin/Device/Vrfs.pm
   App::Netdisco::Web::Plugin::Inventory:
     file: lib/App/Netdisco/Web/Plugin/Inventory.pm
   App::Netdisco::Web::Plugin::Report::ApChannelDist:
@@ -354,6 +360,8 @@ provides:
     file: lib/App/Netdisco/Web/Plugin/Report/SubnetUtilization.pm
   App::Netdisco::Web::Plugin::Report::VlanInventory:
     file: lib/App/Netdisco/Web/Plugin/Report/VlanInventory.pm
+  App::Netdisco::Web::Plugin::Report::VrfInventory:
+    file: lib/App/Netdisco/Web/Plugin/Report/VrfInventory.pm
   App::Netdisco::Web::Plugin::Search::Device:
     file: lib/App/Netdisco/Web/Plugin/Search/Device.pm
   App::Netdisco::Web::Plugin::Search::Node:
@@ -408,6 +416,8 @@ provides:
     file: lib/App/Netdisco/Worker/Plugin/Discover/Properties.pm
   App::Netdisco::Worker::Plugin::Discover::VLANs:
     file: lib/App/Netdisco/Worker/Plugin/Discover/VLANs.pm
+  App::Netdisco::Worker::Plugin::Discover::VRFs:
+    file: lib/App/Netdisco/Worker/Plugin/Discover/VRFs.pm
   App::Netdisco::Worker::Plugin::Discover::Wireless:
     file: lib/App/Netdisco/Worker/Plugin/Discover/Wireless.pm
   App::Netdisco::Worker::Plugin::Discover::WithNodes:

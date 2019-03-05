@@ -38,6 +38,7 @@ lib/App/Netdisco/DB/Result/DevicePower.pm
 lib/App/Netdisco/DB/Result/DeviceRoute.pm
 lib/App/Netdisco/DB/Result/DeviceSkip.pm
 lib/App/Netdisco/DB/Result/DeviceVlan.pm
+lib/App/Netdisco/DB/Result/DeviceVrf.pm
 lib/App/Netdisco/DB/Result/Log.pm
 lib/App/Netdisco/DB/Result/NetmapPositions.pm
 lib/App/Netdisco/DB/Result/Node.pm
@@ -86,6 +87,7 @@ lib/App/Netdisco/DB/ResultSet/DevicePort.pm
 lib/App/Netdisco/DB/ResultSet/DevicePortLog.pm
 lib/App/Netdisco/DB/ResultSet/DevicePortSsid.pm
 lib/App/Netdisco/DB/ResultSet/DevicePower.pm
+lib/App/Netdisco/DB/ResultSet/DeviceVrf.pm
 lib/App/Netdisco/DB/ResultSet/Node.pm
 lib/App/Netdisco/DB/ResultSet/NodeIp.pm
 lib/App/Netdisco/DB/ResultSet/NodeNbt.pm
@@ -152,6 +154,7 @@ lib/App/Netdisco/Web/Plugin/Device/Modules.pm
 lib/App/Netdisco/Web/Plugin/Device/Neighbors.pm
 lib/App/Netdisco/Web/Plugin/Device/Ports.pm
 lib/App/Netdisco/Web/Plugin/Device/Vlans.pm
+lib/App/Netdisco/Web/Plugin/Device/Vrfs.pm
 lib/App/Netdisco/Web/Plugin/Inventory.pm
 lib/App/Netdisco/Web/Plugin/Report/ApChannelDist.pm
 lib/App/Netdisco/Web/Plugin/Report/ApClients.pm
@@ -179,6 +182,7 @@ lib/App/Netdisco/Web/Plugin/Report/PortVLANMismatch.pm
 lib/App/Netdisco/Web/Plugin/Report/SsidInventory.pm
 lib/App/Netdisco/Web/Plugin/Report/SubnetUtilization.pm
 lib/App/Netdisco/Web/Plugin/Report/VlanInventory.pm
+lib/App/Netdisco/Web/Plugin/Report/VrfInventory.pm
 lib/App/Netdisco/Web/Plugin/Search/Device.pm
 lib/App/Netdisco/Web/Plugin/Search/Node.pm
 lib/App/Netdisco/Web/Plugin/Search/Port.pm
@@ -206,6 +210,7 @@ lib/App/Netdisco/Worker/Plugin/Discover/PortPower.pm
 lib/App/Netdisco/Worker/Plugin/Discover/PortProperties.pm
 lib/App/Netdisco/Worker/Plugin/Discover/Properties.pm
 lib/App/Netdisco/Worker/Plugin/Discover/VLANs.pm
+lib/App/Netdisco/Worker/Plugin/Discover/VRFs.pm
 lib/App/Netdisco/Worker/Plugin/Discover/Wireless.pm
 lib/App/Netdisco/Worker/Plugin/Discover/WithNodes.pm
 lib/App/Netdisco/Worker/Plugin/DiscoverAll.pm
@@ -365,6 +370,7 @@ share/schema_versions/App-Netdisco-DB-50-51-PostgreSQL.sql
 share/schema_versions/App-Netdisco-DB-51-52-PostgreSQL.sql
 share/schema_versions/App-Netdisco-DB-52-53-PostgreSQL.sql
 share/schema_versions/App-Netdisco-DB-53-54-PostgreSQL.sql
+share/schema_versions/App-Netdisco-DB-54-55-PostgreSQL.sql
 share/schema_versions/App-Netdisco-DB-6-7-PostgreSQL.sql
 share/schema_versions/App-Netdisco-DB-7-8-PostgreSQL.sql
 share/schema_versions/App-Netdisco-DB-8-9-PostgreSQL.sql
@@ -395,6 +401,7 @@ share/views/ajax/device/ports.tt
 share/views/ajax/device/ports_csv.tt
 share/views/ajax/device/vlans.tt
 share/views/ajax/device/vlans_csv.tt
+share/views/ajax/device/vrfs.tt
 share/views/ajax/report/apchanneldist.tt
 share/views/ajax/report/apchanneldist_csv.tt
 share/views/ajax/report/apclients.tt
@@ -445,6 +452,7 @@ share/views/ajax/report/subnets.tt
 share/views/ajax/report/subnets_csv.tt
 share/views/ajax/report/vlaninventory.tt
 share/views/ajax/report/vlaninventory_csv.tt
+share/views/ajax/report/vrfinventory.tt
 share/views/ajax/search/device.tt
 share/views/ajax/search/device_csv.tt
 share/views/ajax/search/node_by_ip.tt

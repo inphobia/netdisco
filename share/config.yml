@@ -64,6 +64,7 @@ web_plugins:
   - Report::NodesDiscovered
   - Report::SsidInventory
   - Report::VlanInventory
+  - Report::VrfInventory
   - Report::SubnetUtilization
   - Report::PortLog
   - AdminTask::JobQueue
@@ -88,6 +89,7 @@ web_plugins:
   - Device::Neighbors
   - Device::Addresses
   - Device::Vlans
+  - Device::Vrfs
 extra_web_plugins: []
 sidebar_defaults:
   search_node:
@@ -386,6 +388,7 @@ worker_plugins:
   - 'Discover::PortProperties'
   - 'Discover::Properties'
   - 'Discover::VLANs'
+  - 'Discover::VRFs'
   - 'Discover::Wireless'
   - 'Discover::WithNodes'
   - 'DiscoverAll'

@@ -106,6 +106,14 @@ configured on or known by this Device.
 
 __PACKAGE__->has_many( vlans => 'App::Netdisco::DB::Result::DeviceVlan', 'ip' );
 
+=head2 vrfs
+
+Returns the vrfs on this Device.
+
+=cut
+
+__PACKAGE__->has_many( vrfs => 'App::Netdisco::DB::Result::DeviceVrf', 'ip' );
+
 =head2 ports
 
 Returns the set of ports on this Device.
