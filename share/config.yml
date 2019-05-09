@@ -428,7 +428,7 @@ driver_priority:
   snmp:     100
 
 # ---------------
-# GraphViz Export
+# graphviz Export
 # ---------------
 
 graph:

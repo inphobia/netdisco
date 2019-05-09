@@ -30,7 +30,7 @@
       "runtime" : {
          "recommends" : {
             "Graph" : "0",
-            "GraphViz" : "0"
+            "GraphViz2" : "0"
          },
          "requires" : {
             "Algorithm::Cron" : "0.07",
@@ -806,7 +806,7 @@
       },
       "homepage" : "http://netdisco.org/",
       "license" : [
-         "http://opensource.org/licenses/bsd-license.php"
+         "http://opensource.org/licenses/BSD-3-Clause"
       ],
       "repository" : {
          "url" : "https://github.com/netdisco/netdisco"

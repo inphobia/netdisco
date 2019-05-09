@@ -477,7 +477,7 @@ provides:
     file: lib/App/Netdisco/Transport/SSH.pm
 recommends:
   Graph: '0'
-  GraphViz: '0'
+  GraphViz2: '0'
 requires:
   Algorithm::Cron: '0.07'
   AnyEvent: '7.05'
@@ -557,7 +557,7 @@ resources:
   MailingList: https://lists.sourceforge.net/lists/listinfo/netdisco-users
   bugtracker: https://github.com/netdisco/netdisco/issues
   homepage: http://netdisco.org/
-  license: http://opensource.org/licenses/bsd-license.php
+  license: http://opensource.org/licenses/BSD-3-Clause
   repository: https://github.com/netdisco/netdisco
 version: '2.042008'
 x_serialization_backend: 'CPAN::Meta::YAML version 0.018'

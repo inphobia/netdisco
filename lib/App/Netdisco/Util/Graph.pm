@@ -7,7 +7,7 @@ use Dancer::Plugin::DBIC 'schema';
 
 use App::Netdisco::Util::DNS qw/hostname_from_ip ipv4_from_hostname/;
 use Graph::Undirected ();
-use GraphViz ();
+use GraphViz2 ();
 
 use base 'Exporter';
 our @EXPORT = ('graph');
@@ -30,7 +30,7 @@ App::Netdisco::Util::Graph
  $ brew install graphviz   <-- install graphviz on your system
  
  $ ~/bin/localenv bash
- $ cpanm --notest Graph GraphViz
+ $ cpanm --notest Graph GraphViz2
  $ mkdir ~/graph
  
  use App::Netdisco::Util::Graph;
@@ -38,8 +38,8 @@ App::Netdisco::Util::Graph
 
 =head1 DESCRIPTION
 
-Generate GraphViz output from Netdisco data. Requires that the L<Graph> and
-L<GraphViz> distributions be installed.
+Generate graphviz output from Netdisco data. Requires that the L<Graph> and
+L<GraphViz2> distributions be installed.
 
 Requires the same config as for Netdisco 1, but within a C<graph> key.  See
 C<share/config.yml> in the source distribution for an example.

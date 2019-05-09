@@ -92,7 +92,7 @@ Module::Build->new(
   },
   recommends => {
     'Graph' => '0',
-    'GraphViz' => '0',
+    'GraphViz2' => '0',
   },
   test_requires => {
     'Test::More' => '1.302083',

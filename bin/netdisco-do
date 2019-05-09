@@ -296,15 +296,15 @@ action on a specific port, set the C<-p> parameter.
 
 =head2 graph
 
-Generate GraphViz graphs for the largest cluster of devices.
+Generate graphviz graphs for the largest cluster of devices.
 
-You'll need to install the L<Graph::Undirected> and L<GraphViz> Perl modules,
-and possibly also the C<graphviz> utility for your operating system. Also
+You'll need to install the L<Graph::Undirected> and L<GraphViz2> Perl modules,
+as well as the C<graphviz> utility for your operating system. Also,
 create a directory for the output files.
 
  mkdir ~/graph
  ~/bin/localenv cpanm Graph::Undirected
- ~/bin/localenv cpanm GraphViz
+ ~/bin/localenv cpanm GraphViz2
 
 =head2 show
 
