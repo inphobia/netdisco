@@ -27,25 +27,45 @@ App::Netdisco::Util::Graph
 
 =head1 SYNOPSIS
 
- $ brew install graphviz   <-- install graphviz on your system
- 
- $ ~/bin/localenv bash
- $ cpanm --notest Graph GraphViz2
- $ mkdir ~/graph
- 
  use App::Netdisco::Util::Graph;
  graph;
 
 =head1 DESCRIPTION
 
 Generate graphviz output from Netdisco data. Requires that the L<Graph> and
-L<GraphViz2> distributions be installed.
+L<GraphViz2> distributions be installed. Also needs the graphviz package
+installed on your system.
+
+Do be aware that C<GraphViz2> uses the C<dot> program from graphviz during
+it's build process to make a hardcoded list of secondary keys that C<dot>
+accepts. As such it is important to keep L<GraphViz2> and the graphviz system
+package in sync.
 
 Requires the same config as for Netdisco 1, but within a C<graph> key.  See
 C<share/config.yml> in the source distribution for an example.
 
 The C<graph> subroutine is exported by default. The C<:all> tag will export
 all subroutines.
+
+This module requires you to install graphviz, your operating system will most
+likely provide the required packages, if not you can find source and binaries
+on the L<graphviz site|http://www.graphviz.org>.
+
+To install the required perl modules for netdisco run these commands:
+
+ $ ~/bin/localenv bash
+ $ cpanm --notest Graph GraphViz2
+
+Finally a directory for the output files must be created:
+
+ $ mkdir ~/graph
+
+
+=head1 NOTES
+
+We made sure to use C<graphviz> whenever we refer to the operating
+system packages, while using C<GraphViz2> when referring to the
+perl module.
 
 =head1 EXPORT
 
@@ -121,7 +141,7 @@ sub graph {
 
 =item graph_each($graph_obj, $name)
 
-Generates subgraph. Does actual GraphViz calls.
+Generates subgraph. Does actual GraphViz2 calls.
 
 =cut
 
@@ -277,8 +297,13 @@ $gv->add_edge(from => $link, to => $dest );
 
     if (defined $CONFIG{graph_raw} and $CONFIG{graph_raw}){
         my $graph_raw = _homepath('graph_raw');
-        info "  Creating raw graph: $graph_raw";
+        info "  Creating raw dot raph: $graph_raw";
 #        $gv->as_canon($graph_raw);
+$gv->run(format => 'dot', output_file => $graph_raw);
+
+# XXX also some quick & dirty json output
+$graph_raw =~ s/...$/json/;
+$gv->run(format => 'json', output_file => $graph_raw);
     }
 
     if (defined $CONFIG{graph} and $CONFIG{graph}){
@@ -308,9 +333,9 @@ $gv->run(format => 'svg', output_file => $graph_svg);
     }
 }
 
-=item graph_addnode($graphviz_obj, $node_ip)
+=item graph_addnode($graphviz2_obj, $node_ip)
 
-Checks for mapping settings in config file and adds node to the GraphViz
+Checks for mapping settings in config file and adds node to the GraphViz2
 object.
 
 =cut
@@ -517,5 +542,23 @@ sub _homepath {
         return $home . "/" . $item;
     }
 }
+
+=head1 SEE ALSO
+
+=over
+
+=item L<http://www.graphviz.org/>
+
+Home of the actual system programs you need to install, most
+importantly the C<dot> program.
+
+=item L<https://metacpan.org/pod/GraphViz2>
+
+GraphViz2 perl module homepage.
+
+=back
+
+
+=cut
 
 1;

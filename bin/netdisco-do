@@ -298,13 +298,14 @@ action on a specific port, set the C<-p> parameter.
 
 Generate graphviz graphs for the largest cluster of devices.
 
-You'll need to install the L<Graph::Undirected> and L<GraphViz2> Perl modules,
-as well as the C<graphviz> utility for your operating system. Also,
-create a directory for the output files.
+Refer to L<App::Netdisco::Util::Graph> for more information on the
+additional system requirements for this function.
 
- mkdir ~/graph
- ~/bin/localenv cpanm Graph::Undirected
- ~/bin/localenv cpanm GraphViz2
+ ~/bin/netdisco-do graph
+
+=for comment
+# XXX todo: allowing -e to set the output directory of your graph files
+=cut
 
 =head2 show
 
