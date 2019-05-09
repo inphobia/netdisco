@@ -131,8 +131,8 @@ sub graph_each  {
     info "Creating new Graph";
 
     my $graph_defs = {
-                     'bgcolor' => $CONFIG{graph_bg}         || 'black',
-                     'color'   => $CONFIG{graph_color}      || 'white',
+#                     'bgcolor' => $CONFIG{graph_bg}         || 'black',
+#                     'color'   => $CONFIG{graph_color}      || 'white',
                      'overlap' => $CONFIG{graph_overlap}    || 'scale',
                      'fontpath'=> _homepath('graph_fontpath',''),
                      'ranksep' => $CONFIG{graph_ranksep}    || 0.3,
@@ -163,18 +163,42 @@ sub graph_each  {
         $epsilon = "0." . '0' x $CONFIG{graph_epsilon} . '1';
     }
 
-    my %gv = (
-               directed => 0,
-               layout   => $CONFIG{graph_layout} || 'twopi',
-               graph    => $graph_defs,
-               node     => $node_defs,
-               edge     => $edge_defs,
-               width    => $CONFIG{graph_x}      || 30,
-               height   => $CONFIG{graph_y}      || 30,
-               epsilon  => $epsilon,
-              );
+#    my %gv = (
+#               directed => 0,
+#               layout   => $CONFIG{graph_layout} || 'twopi',
+#               graph    => $graph_defs,
+#               node     => $node_defs,
+#               edge     => $edge_defs,
+#               width    => $CONFIG{graph_x}      || 30,
+#               height   => $CONFIG{graph_y}      || 30,
+#               epsilon  => $epsilon,
+#              );
+#
+#    my $gv = GraphViz2->new(%gv);
 
-    my $gv = GraphViz->new(%gv);
+use Log::Handler;
+
+my($logger) = Log::Handler -> new;
+
+$logger -> add
+        (
+         screen =>
+         {
+                 maxlevel       => 'debug',
+                 message_layout => '%m',
+                 minlevel       => 'error',
+         }
+        );
+
+my($gv) = GraphViz2 -> new
+        (
+         edge   => {color => 'grey'},
+         global => {directed => 0},
+         graph  => {size => 20, label => 'Adult', rankdir => 'TB'},
+         logger => $logger,
+         node   => {shape => 'box'},
+        );
+
 
     my %node_map = ();
     my @nodes = $G->vertices;
@@ -182,6 +206,7 @@ sub graph_each  {
     foreach my $dev (@nodes){
         my $node_name = graph_addnode($gv,$dev);
         $node_map{$dev} = $node_name;
+debug "  graph_nodemap - node_name $node_name";
     }
 
     my $root_ip = defined $CONFIG{root_device}
@@ -244,7 +269,8 @@ sub graph_each  {
             $edge{style} .= "," . $CONFIG{edge_style};
         }
 
-        $gv->add_edge($link => $dest, %edge );
+#        $gv->add_edge($link => $dest, %edge );
+$gv->add_edge(from => $link, to => $dest );
     }
 
     info "Ignore all warnings about node size";
@@ -252,31 +278,33 @@ sub graph_each  {
     if (defined $CONFIG{graph_raw} and $CONFIG{graph_raw}){
         my $graph_raw = _homepath('graph_raw');
         info "  Creating raw graph: $graph_raw";
-        $gv->as_canon($graph_raw);
+#        $gv->as_canon($graph_raw);
     }
 
     if (defined $CONFIG{graph} and $CONFIG{graph}){
         my $graph_gif = _homepath('graph');
         info "  Creating graph: $graph_gif";
-        $gv->as_gif($graph_gif);
+#        $gv->as_gif($graph_gif);
     }
 
     if (defined $CONFIG{graph_png} and $CONFIG{graph_png}){
         my $graph_png = _homepath('graph_png');
         info "  Creating png graph: $graph_png";
-        $gv->as_png($graph_png);
+#        $gv->as_png($graph_png);
+$gv->run(format => 'png', output_file => $graph_png);
     }
 
     if (defined $CONFIG{graph_map} and $CONFIG{graph_map}){
         my $graph_map = _homepath('graph_map');
         info "  Creating CMAP : $graph_map";
-        $gv->as_cmap($graph_map);
+#        $gv->as_cmap($graph_map);
     }
 
     if (defined $CONFIG{graph_svg} and $CONFIG{graph_svg}){
         my $graph_svg = _homepath('graph_svg');
         info "  Creating SVG : $graph_svg";
-        $gv->as_svg($graph_svg);
+#        $gv->as_svg($graph_svg);
+$gv->run(format => 'svg', output_file => $graph_svg);
     }
 }
 
@@ -297,10 +325,12 @@ sub graph_addnode {
     $isdev  = $GRAPH{$ip}->{isdev};
     $devloc = $GRAPH{$ip}->{location};
 
-    $label = "($ip)" unless defined $label;
+#    $label = "($ip)" unless defined $label;
+    $label = "$ip" unless defined $label;
     my $domain_suffix = setting('domain_suffix') || '';
     $label =~ s/$domain_suffix$//;
     $node{label} = $label;
+#$node{label} = "l";
 
     # Dereferencing the scalar by name below
     #   requires that the variable be non-lexical (not my)
@@ -308,11 +338,14 @@ sub graph_addnode {
     #   that will expire at the end of this block
     # Node Mappings
     foreach my $map (@{ $CONFIG{'node_map'} || [] }){
+debug "  graph_addnode - map $map";
         my ($var, $regex, $attr, $val) = split(':', $map);
 
         { no strict 'refs';
            $var = ${"$var"};
         }
+debug "  graph_addnode - var $var";
+
         next unless defined $var;
 
         if ($var =~ /$regex/) {
@@ -323,15 +356,18 @@ sub graph_addnode {
 
     # URL for image maps FIXME for non-root hosting
     if ($isdev) {
-        $node{URL} = "/device?&q=$ip";
+#        $node{URL} = "/device?&q=$ip";
+$node{URL} = "d";
     }
     else {
-        $node{URL} = "/search?tab=node&q=$ip";
+#        $node{URL} = "/search?tab=node&q=$ip";
+$node{URL} = "s";
         # Overrides any colors given to nodes above. Bug 1094208
         $node{fillcolor} = $CONFIG{'node_problem'} || 'red';
     }
+debug "  graph_addnode - Giving node $ip URL = x";
 
-    if ($CONFIG{'graph_clusters'} && $devloc) {
+#    if ($CONFIG{'graph_clusters'} && $devloc) {
         # This odd construct works around a bug in GraphViz.pm's
         # quoting of cluster names.  If it has a name with spaces,
         # it'll just quote it, resulting in creating a subgraph name
@@ -347,12 +383,17 @@ sub graph_addnode {
         # of name and label attributes to hide the extra space from
         # the user.  However, since it's just a space, hopefully it
         # won't be too noticable.
-        my($loc) = $devloc;
-        $loc = " " . $loc if ($loc =~ /^[a-zA-Z](\w| )*$/);
-        $node{cluster} = { name => $loc };
-    }
+debug "  graph_addnode";
+#        my($loc) = $devloc;
+#        $loc = " " . $loc if ($loc =~ /^[a-zA-Z](\w| )*$/);
+#        $node{cluster} = { name => $loc };
+#    }
 
-    my $rv = $gv->add_node($ip, %node);
+
+debug "  graph_addnode - $ip ";
+#    my $rv = $gv->add_node($ip, %node);
+my $rv = $gv->add_node(name => "$ip");
+debug "  graph_addnode - $ip ";
     return $rv;
 }
 
@@ -454,6 +495,7 @@ sub make_graph {
 
             $G->add_edge($link,$dest);
             debug "  make_graph - add_edge('$link','$dest')";
+#$G->add_edge(from => $link, to => $dest);
         }
     }
 
