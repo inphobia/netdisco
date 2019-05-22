@@ -142,7 +142,7 @@
       },
       "App::Netdisco::DB" : {
          "file" : "lib/App/Netdisco/DB.pm",
-         "version" : "57"
+         "version" : "58"
       },
       "App::Netdisco::DB::ExplicitLocking" : {
          "file" : "lib/App/Netdisco/DB/ExplicitLocking.pm"
@@ -815,5 +815,5 @@
       "x_MailingList" : "https://lists.sourceforge.net/lists/listinfo/netdisco-users"
    },
    "version" : "2.042008",
-   "x_serialization_backend" : "JSON::PP version 2.97001"
+   "x_serialization_backend" : "JSON::PP version 4.02"
 }

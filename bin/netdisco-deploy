@@ -178,6 +178,7 @@ sub deploy_db {
         username => $name,
         password => _make_password($pass),
         admin => 'true',
+        local_control => 'true',
         port_control => 'true',
       });
 
