@@ -46,6 +46,10 @@
   <script type="text/javascript" src="[% uri_base %]/javascripts/netdisco_portcontrol.js"></script>
   [% END %]
 
+  [% IF user_has_role('mask_control') %]
+    <script type="text/javascript" src="[% uri_base %]/javascripts/netdisco_maskcontrol.js"></script>
+  [% END %]
+
   [% FOREACH add_js IN settings._additional_javascript %]
   <script type="text/javascript" src="[% uri_base %]/plugin/[% add_js %]/[% add_js %].js"></script>
   [% END %]
@@ -174,6 +178,8 @@
           [% IF user_has_role('admin') %]
             <i class="icon-user text-error"></i>
           [% ELSIF user_has_role('port_control') %]
+            <i class="icon-user text-warning"></i>
+          [% ELSIF user_has_role('mask_control') %]
             <i class="icon-user text-warning"></i>
           [% ELSE %]
             <i class="icon-user"></i>

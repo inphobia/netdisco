@@ -155,6 +155,7 @@ lib/App/Netdisco/Web/Plugin/Device/Neighbors.pm
 lib/App/Netdisco/Web/Plugin/Device/Ports.pm
 lib/App/Netdisco/Web/Plugin/Device/Vlans.pm
 lib/App/Netdisco/Web/Plugin/Inventory.pm
+lib/App/Netdisco/Web/Plugin/MaskControl.pm
 lib/App/Netdisco/Web/Plugin/Report/ApChannelDist.pm
 lib/App/Netdisco/Web/Plugin/Report/ApClients.pm
 lib/App/Netdisco/Web/Plugin/Report/ApRadioChannelPower.pm
@@ -315,6 +316,7 @@ share/public/javascripts/jquery.qtip.min.js
 share/public/javascripts/moment.min.js
 share/public/javascripts/natural.js
 share/public/javascripts/netdisco.js
+share/public/javascripts/netdisco_maskcontrol.js
 share/public/javascripts/netdisco_portcontrol.js
 share/public/javascripts/portsort.js
 share/public/javascripts/toastr.js
