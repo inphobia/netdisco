@@ -14,9 +14,6 @@ __PACKAGE__->result_source_instance->view_definition(<<ENDSQL
   SELECT username, 'port_control' AS role FROM users
     WHERE port_control
   UNION
-  SELECT username, 'local_control' AS role FROM users
-    WHERE local_control
-  UNION
   SELECT username, 'mask_control' AS role FROM users
     WHERE mask_control
   UNION

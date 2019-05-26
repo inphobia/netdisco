@@ -1,7 +1,14 @@
 BEGIN;
 
-ALTER TABLE users ADD COLUMN "local_control" boolean DEFAULT false;
+alter table device_port_wireless alter column ip set not null;
+alter table device_port_wireless alter column port set not null;
+alter table device_port_wireless add constraint device_port_wireless_pkey primary key (ip, port);
 
-UPDATE users SET local_control = TRUE WHERE admin = TRUE;
+alter table device_port_ssid alter column ip set not null;
+alter table device_port_ssid alter column port set not null;
+alter table device_port_ssid alter column bssid set not null;
+alter table device_port_ssid add constraint device_port_ssid_pkey primary key (ip, bssid, port);
+
+
 
 COMMIT;
