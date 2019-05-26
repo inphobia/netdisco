@@ -5,7 +5,7 @@
       <th class="nd_center-cell">Username</th>
       <th class="nd_center-cell">Password</th>
       <th class="nd_center-cell">LDAP Auth</th>
-      <th class="nd_center-cell">Local Control</th>
+      <th class="nd_center-cell">Mask Control</th>
       <th class="nd_center-cell">Port Control</th>
       <th class="nd_center-cell">Administrator</th>
       <th class="nd_center-cell">Created</th>
@@ -20,7 +20,7 @@
       <td class="nd_center-cell"><input data-form="add" name="username" type="text"></td>
       <td class="nd_center-cell"><input data-form="add" name="password" type="password"></td>
       <td class="nd_center-cell"><input data-form="add" type="checkbox" name="ldap"></td>
-      <td class="nd_center-cell"><input data-form="add" type="checkbox" name="local_control"></td>
+      <td class="nd_center-cell"><input data-form="add" type="checkbox" name="mask_control"></td>
       <td class="nd_center-cell"><input data-form="add" type="checkbox" name="port_control"></td>
       <td class="nd_center-cell"><input data-form="add" type="checkbox" name="admin"></td>
       <td class="nd_center-cell"></td>
@@ -48,7 +48,7 @@
         <input data-form="update" name="ldap" type="checkbox" [% ' checked="checked"' IF row.ldap %]>
       </td>
       <td class="nd_center-cell">
-        <input data-form="update" name="local_control" type="checkbox" [% ' checked="checked"' IF row.local_control %]>
+        <input data-form="update" name="mask_control" type="checkbox" [% ' checked="checked"' IF row.mask_control %]>
       </td>
       <td class="nd_center-cell">
         <input data-form="update" name="port_control" type="checkbox" [% ' checked="checked"' IF row.port_control %]>

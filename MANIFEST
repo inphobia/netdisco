@@ -39,6 +39,7 @@ lib/App/Netdisco/DB/Result/DeviceRoute.pm
 lib/App/Netdisco/DB/Result/DeviceSkip.pm
 lib/App/Netdisco/DB/Result/DeviceVlan.pm
 lib/App/Netdisco/DB/Result/Log.pm
+lib/App/Netdisco/DB/Result/MaskDevice.pm
 lib/App/Netdisco/DB/Result/NetmapPositions.pm
 lib/App/Netdisco/DB/Result/Node.pm
 lib/App/Netdisco/DB/Result/NodeIp.pm
