@@ -67,14 +67,14 @@ provides:
     file: lib/App/Netdisco/DB/Result/DevicePortWireless.pm
   App::Netdisco::DB::Result::DevicePower:
     file: lib/App/Netdisco/DB/Result/DevicePower.pm
-  App::Netdisco::DB::Result::DeviceRoute:
-    file: lib/App/Netdisco/DB/Result/DeviceRoute.pm
   App::Netdisco::DB::Result::DeviceSkip:
     file: lib/App/Netdisco/DB/Result/DeviceSkip.pm
   App::Netdisco::DB::Result::DeviceVlan:
     file: lib/App/Netdisco/DB/Result/DeviceVlan.pm
   App::Netdisco::DB::Result::Log:
     file: lib/App/Netdisco/DB/Result/Log.pm
+  App::Netdisco::DB::Result::MaskDevice:
+    file: lib/App/Netdisco/DB/Result/MaskDevice.pm
   App::Netdisco::DB::Result::NetmapPositions:
     file: lib/App/Netdisco/DB/Result/NetmapPositions.pm
   App::Netdisco::DB::Result::Node:
