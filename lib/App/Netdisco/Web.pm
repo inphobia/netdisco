@@ -23,6 +23,7 @@ use App::Netdisco::Web::Report;
 use App::Netdisco::Web::AdminTask;
 use App::Netdisco::Web::TypeAhead;
 use App::Netdisco::Web::PortControl;
+use App::Netdisco::Web::MaskControl;
 use App::Netdisco::Web::Statistics;
 use App::Netdisco::Web::Password;
 use App::Netdisco::Web::GenericReport;

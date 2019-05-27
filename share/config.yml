@@ -360,6 +360,7 @@ job_prio:
     - location
     - contact
     - portcontrol
+    - maskcontrol
     - portname
     - vlan
     - power
@@ -404,6 +405,7 @@ worker_plugins:
   - 'Macsuck::WirelessNodes'
   - 'Macwalk'
   - 'MakeRancidConf'
+  - 'MaskControl'
   - 'NodeMonitor'
   - 'Nbtstat'
   - 'Nbtstat::Core'

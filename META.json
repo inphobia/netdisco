@@ -484,7 +484,7 @@
          "file" : "lib/App/Netdisco/Web/GenericReport.pm"
       },
       "App::Netdisco::Web::MaskControl" : {
-         "file" : "lib/App/Netdisco/Web/Plugin/MaskControl.pm"
+         "file" : "lib/App/Netdisco/Web/MaskControl.pm"
       },
       "App::Netdisco::Web::Password" : {
          "file" : "lib/App/Netdisco/Web/Password.pm"

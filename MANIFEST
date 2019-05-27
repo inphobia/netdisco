@@ -134,6 +134,7 @@ lib/App/Netdisco/Web/Auth/Provider/DBIC.pm
 lib/App/Netdisco/Web/AuthN.pm
 lib/App/Netdisco/Web/Device.pm
 lib/App/Netdisco/Web/GenericReport.pm
+lib/App/Netdisco/Web/MaskControl.pm
 lib/App/Netdisco/Web/Password.pm
 lib/App/Netdisco/Web/Plugin.pm
 lib/App/Netdisco/Web/Plugin/AdminTask/DuplicateDevices.pm
