@@ -81,6 +81,7 @@
             "Plack::Middleware::Expires" : "0.03",
             "Plack::Middleware::ReverseProxy" : "0.15",
             "Pod::Usage" : "0",
+            "Regexp::Common" : "2017060201",
             "Role::Tiny" : "1.002005",
             "SNMP::Info" : "3.68",
             "SQL::Abstract" : "1.85",
