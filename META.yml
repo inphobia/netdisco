@@ -38,7 +38,7 @@ provides:
     file: lib/App/Netdisco/Configuration.pm
   App::Netdisco::DB:
     file: lib/App/Netdisco/DB.pm
-    version: '59'
+    version: '58'
   App::Netdisco::DB::ExplicitLocking:
     file: lib/App/Netdisco/DB/ExplicitLocking.pm
   App::Netdisco::DB::Result::Admin:
@@ -73,8 +73,6 @@ provides:
     file: lib/App/Netdisco/DB/Result/DeviceVlan.pm
   App::Netdisco::DB::Result::Log:
     file: lib/App/Netdisco/DB/Result/Log.pm
-  App::Netdisco::DB::Result::MaskDevice:
-    file: lib/App/Netdisco/DB/Result/MaskDevice.pm
   App::Netdisco::DB::Result::NetmapPositions:
     file: lib/App/Netdisco/DB/Result/NetmapPositions.pm
   App::Netdisco::DB::Result::Node:
@@ -265,8 +263,6 @@ provides:
     file: lib/App/Netdisco/Web/Device.pm
   App::Netdisco::Web::GenericReport:
     file: lib/App/Netdisco/Web/GenericReport.pm
-  App::Netdisco::Web::MaskControl:
-    file: lib/App/Netdisco/Web/MaskControl.pm
   App::Netdisco::Web::Password:
     file: lib/App/Netdisco/Web/Password.pm
   App::Netdisco::Web::Plugin:

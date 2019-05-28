@@ -38,7 +38,6 @@ lib/App/Netdisco/DB/Result/DevicePower.pm
 lib/App/Netdisco/DB/Result/DeviceSkip.pm
 lib/App/Netdisco/DB/Result/DeviceVlan.pm
 lib/App/Netdisco/DB/Result/Log.pm
-lib/App/Netdisco/DB/Result/MaskDevice.pm
 lib/App/Netdisco/DB/Result/NetmapPositions.pm
 lib/App/Netdisco/DB/Result/Node.pm
 lib/App/Netdisco/DB/Result/NodeIp.pm
@@ -134,7 +133,6 @@ lib/App/Netdisco/Web/Auth/Provider/DBIC.pm
 lib/App/Netdisco/Web/AuthN.pm
 lib/App/Netdisco/Web/Device.pm
 lib/App/Netdisco/Web/GenericReport.pm
-lib/App/Netdisco/Web/MaskControl.pm
 lib/App/Netdisco/Web/Password.pm
 lib/App/Netdisco/Web/Plugin.pm
 lib/App/Netdisco/Web/Plugin/AdminTask/DuplicateDevices.pm
@@ -156,7 +154,6 @@ lib/App/Netdisco/Web/Plugin/Device/Neighbors.pm
 lib/App/Netdisco/Web/Plugin/Device/Ports.pm
 lib/App/Netdisco/Web/Plugin/Device/Vlans.pm
 lib/App/Netdisco/Web/Plugin/Inventory.pm
-lib/App/Netdisco/Web/Plugin/MaskControl.pm
 lib/App/Netdisco/Web/Plugin/Report/ApChannelDist.pm
 lib/App/Netdisco/Web/Plugin/Report/ApClients.pm
 lib/App/Netdisco/Web/Plugin/Report/ApRadioChannelPower.pm
@@ -317,7 +314,6 @@ share/public/javascripts/jquery.qtip.min.js
 share/public/javascripts/moment.min.js
 share/public/javascripts/natural.js
 share/public/javascripts/netdisco.js
-share/public/javascripts/netdisco_maskcontrol.js
 share/public/javascripts/netdisco_portcontrol.js
 share/public/javascripts/portsort.js
 share/public/javascripts/toastr.js
@@ -375,7 +371,6 @@ share/schema_versions/App-Netdisco-DB-54-55-PostgreSQL.sql
 share/schema_versions/App-Netdisco-DB-55-56-PostgreSQL.sql
 share/schema_versions/App-Netdisco-DB-56-57-PostgreSQL.sql
 share/schema_versions/App-Netdisco-DB-57-58-PostgreSQL.sql
-share/schema_versions/App-Netdisco-DB-58-59-PostgreSQL.sql
 share/schema_versions/App-Netdisco-DB-6-7-PostgreSQL.sql
 share/schema_versions/App-Netdisco-DB-7-8-PostgreSQL.sql
 share/schema_versions/App-Netdisco-DB-8-9-PostgreSQL.sql
