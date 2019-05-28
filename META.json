@@ -142,7 +142,7 @@
       },
       "App::Netdisco::DB" : {
          "file" : "lib/App/Netdisco/DB.pm",
-         "version" : "58"
+         "version" : "59"
       },
       "App::Netdisco::DB::ExplicitLocking" : {
          "file" : "lib/App/Netdisco/DB/ExplicitLocking.pm"
@@ -194,6 +194,9 @@
       },
       "App::Netdisco::DB::Result::Log" : {
          "file" : "lib/App/Netdisco/DB/Result/Log.pm"
+      },
+      "App::Netdisco::DB::Result::MaskDevice" : {
+         "file" : "lib/App/Netdisco/DB/Result/MaskDevice.pm"
       },
       "App::Netdisco::DB::Result::NetmapPositions" : {
          "file" : "lib/App/Netdisco/DB/Result/NetmapPositions.pm"
@@ -479,6 +482,9 @@
       },
       "App::Netdisco::Web::GenericReport" : {
          "file" : "lib/App/Netdisco/Web/GenericReport.pm"
+      },
+      "App::Netdisco::Web::MaskControl" : {
+         "file" : "lib/App/Netdisco/Web/MaskControl.pm"
       },
       "App::Netdisco::Web::Password" : {
          "file" : "lib/App/Netdisco/Web/Password.pm"
