@@ -1,6 +1,7 @@
 BEGIN;
 
 ALTER TABLE users ADD COLUMN "mask_control" boolean DEFAULT false;
+
 UPDATE users SET mask_control = TRUE WHERE admin = TRUE;
 
 CREATE TABLE "mask_device" (

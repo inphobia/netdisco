@@ -46,6 +46,8 @@
   <script type="text/javascript" src="[% uri_base %]/javascripts/netdisco_portcontrol.js"></script>
   [% END %]
 
+  [%# TODO; maskcontrol.js %]
+
   [% IF user_has_role('mask_control') %]
     <script type="text/javascript" src="[% uri_base %]/javascripts/netdisco_maskcontrol.js"></script>
   [% END %]

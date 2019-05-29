@@ -65,8 +65,7 @@ App::Netdisco::DB::Result::MaskDevice - overwrite discovered data with manual in
 
 =head1 SYNOPSIS
 
-#TODO
-TODO
+#TODO XXX A LOT
 
 =head1 DESCRIPTION
 
