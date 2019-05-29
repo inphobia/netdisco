@@ -66,6 +66,10 @@
         </td>
       [% END %]
 
+      [%# TODO
+         about 8 c_admin usages below that need c_mask too
+       %]
+
       [% IF params.c_port %]
       [% IF user_can_port_control AND params.c_admin %]
       [% IF row.up_admin == 'up' %]
