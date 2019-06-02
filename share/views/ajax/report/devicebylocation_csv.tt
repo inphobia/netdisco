@@ -1,10 +1,10 @@
 [% USE CSV -%]
-[% CSV.dump([ 'Location' 'Device' 'System Name' 'Vendor' 'Model' ]) %]
+[% CSV.dump(['Location' 'Device' 'System Name' 'Vendor' 'Model']) %]
 
 [% FOREACH row IN results %]
   [% mylist = [] %]
   [% device = row.dns || row.ip %]
-  [% FOREACH col IN [ row.location device row.name row.vendor row.model ] %]
+  [% FOREACH col IN [row.location device row.name row.vendor row.model] %]
     [% mylist.push(col) %]
   [% END %]
   [% CSV.dump(mylist) %]

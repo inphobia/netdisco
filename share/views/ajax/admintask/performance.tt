@@ -3,14 +3,14 @@
 [% ELSE %]
 <table id="app-data-table" class="table table-bordered table-condensed table-hover" width="100%" cellspacing="0">
   <thead>
-    <tr>
-      <th class="nd_center-cell">Action</th>
-      <th class="nd_center-cell">Number of Devices</th>
-      <th class="nd_center-cell">Queued At</th>
-      <th class="nd_center-cell">Started</th>
-      <th class="nd_center-cell">Finished</th>
-      <th class="nd_center-cell">Time Elapsed</th>
-    </tr>
+  <tr>
+    <th class="nd_center-cell">Action</th>
+    <th class="nd_center-cell">Number of Devices</th>
+    <th class="nd_center-cell">Queued At</th>
+    <th class="nd_center-cell">Started</th>
+    <th class="nd_center-cell">Finished</th>
+    <th class="nd_center-cell">Time Elapsed</th>
+  </tr>
   </thead>
   <tbody>
     [% WHILE (row = results.next) %]
@@ -30,10 +30,10 @@
       [% END %]
     >
       <td class="nd_center-cell">[% row.action.ucfirst | html_entity %]</td>
-      <td class="nd_center-cell">[% row.number  | html_entity %]</td>
+      <td class="nd_center-cell">[% row.number | html_entity %]</td>
       <td class="nd_center-cell">[% row.entered_stamp | html_entity %]</td>
-      <td class="nd_center-cell">[% row.start   | html_entity %]</td>
-      <td class="nd_center-cell">[% row.end     | html_entity %]</td>
+      <td class="nd_center-cell">[% row.start | html_entity %]</td>
+      <td class="nd_center-cell">[% row.end | html_entity %]</td>
       <td class="nd_center-cell">[% row.elapsed | html_entity %]</td>
     </tr>
     [% END %]
@@ -42,14 +42,14 @@
 [% END %]
 
 <script>
-$(document).ready(function() {
-    $('#app-data-table').dataTable({
-        "paging":   false,
-        "searching": false,
-        "info":     false,
-        "order": [[ 2, 'desc' ], [ 5, 'desc' ]],
-        "pageLength": 50
-    } );
-} );
+$(document).ready(function () {
+  $('#app-data-table').dataTable({
+    "paging": false,
+    "searching": false,
+    "info": false,
+    "order": [[2, 'desc'], [5, 'desc']],
+    "pageLength": 50
+  });
+});
 </script>
 

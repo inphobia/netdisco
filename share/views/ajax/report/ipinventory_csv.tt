@@ -1,5 +1,5 @@
 [% USE CSV %]
-[% CSV.dump([ 'Node' 'MAC Address' 'DNS' 'Last Used' ]) %]
+[% CSV.dump(['Node' 'MAC Address' 'DNS' 'Last Used']) %]
 
 [% FOREACH row IN results %]
   [% mylist = [] %]

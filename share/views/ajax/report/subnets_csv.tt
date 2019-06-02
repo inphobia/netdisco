@@ -1,5 +1,5 @@
 [% USE CSV %]
-[% CSV.dump([ 'Subnet' 'Size' 'Number of Active Nodes' 'Percent Utilization' ]) %]
+[% CSV.dump(['Subnet' 'Size' 'Number of Active Nodes' 'Percent Utilization']) %]
 
 [% FOREACH row IN results %]
   [% mylist = [] %]

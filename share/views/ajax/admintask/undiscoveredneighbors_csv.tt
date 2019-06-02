@@ -1,7 +1,7 @@
 [% USE CSV -%]
-[% CSV.dump([ 'Observing Device' 'Device Port'
-              'Remote IP' 'Remote Port' 'Remote ID' 'Remote Type'
-              'Last Discovery Attempt' 'Discovery Log']) %]
+[% CSV.dump(['Observing Device' 'Device Port'
+        'Remote IP' 'Remote Port' 'Remote ID' 'Remote Type'
+        'Last Discovery Attempt' 'Discovery Log']) %]
 
 [% FOREACH row IN results %]
   [% mylist = [] %]

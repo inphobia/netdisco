@@ -1,5 +1,5 @@
 [% USE CSV -%]
-[% CSV.dump([ 'Channel' 'Count' ]) %]
+[% CSV.dump(['Channel' 'Count']) %]
 
 [% FOREACH row IN results %]
   [% mylist = [] %]

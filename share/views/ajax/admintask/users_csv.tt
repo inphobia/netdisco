@@ -1,7 +1,7 @@
 [% USE CSV -%]
-[% CSV.dump([ 'Full Name' 'Username'
-              'LDAP Auth' 'Port Control' 'Administrator' 'Created'
-              'Last Login' 'Note']) %]
+[% CSV.dump(['Full Name' 'Username'
+        'LDAP Auth' 'Port Control' 'Administrator' 'Created'
+        'Last Login' 'Note']) %]
 
 [% FOREACH row IN results %]
   [% mylist = [] %]

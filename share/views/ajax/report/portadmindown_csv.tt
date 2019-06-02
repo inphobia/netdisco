@@ -1,5 +1,5 @@
 [% USE CSV -%]
-[% CSV.dump([ 'Device' 'Port' 'Port Description' 'Admin Status' ]) %]
+[% CSV.dump(['Device' 'Port' 'Port Description' 'Admin Status']) %]
 
 [% FOREACH row IN results %]
   [% mylist = [] %]
