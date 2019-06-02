@@ -15,10 +15,11 @@
 [%- END -%]
 [% BLOCK print_line -%]
 <li>
+  <span>
   [% IF nodes.$item.children.defined -%]
-  <span><i class="icon-minus-sign text-info"></i>&nbsp;
+  <i class="icon-minus-sign text-info"></i>&nbsp;
   [%- ELSE -%]
-  <span><i class="icon-leaf"></i>&nbsp;
+  <i class="icon-leaf"></i>&nbsp;
   [%- END -%]
   <a href="[% uri_for('/report/moduleinventory') %]?description=[% nodes.$item.module.description | uri %]">[% nodes.$item.module.description -%]</a>
   [%- IF nodes.$item.module.name -%]

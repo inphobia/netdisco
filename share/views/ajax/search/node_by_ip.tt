@@ -184,8 +184,7 @@ $(document).ready(function () {
           [% ELSE %]
             '<tr class="group"><td colspan="2">' + group + '</td></tr>'
           [% END %]
-        )
-          ;
+        );
 
           last = group;
         }
