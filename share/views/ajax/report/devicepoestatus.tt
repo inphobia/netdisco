@@ -20,9 +20,15 @@
   <tbody>
   [% FOREACH row IN results %]
   <tr>
-    <td>[% row.ip %]</td> <td>[% row.dns %]</td> <td>[% row.name %]</td> <td>[% row.model %]</td>
-    <td>[% row.location %]</td> <td>[% row.module %]</td> <td class="nd_center-cell">[% row.power %]</td>
-    <td class="nd_center-cell">[% row.status %]</td> <td class="nd_center-cell">[% row.poe_capable_ports %]</td>
+    <td>[% row.ip %]</td>
+    <td>[% row.dns %]</td>
+    <td>[% row.name %]</td>
+    <td>[% row.model %]</td>
+    <td>[% row.location %]</td>
+    <td>[% row.module %]</td>
+    <td class="nd_center-cell">[% row.power %]</td>
+    <td class="nd_center-cell">[% row.status %]</td>
+    <td class="nd_center-cell">[% row.poe_capable_ports %]</td>
     <td class="nd_center-cell">[% row.poe_powered_ports %]</td>
     <td class="nd_center-cell">[% row.poe_disabled_ports %]</td>
     <td class="nd_center-cell">[% row.poe_errored_ports %]</td>

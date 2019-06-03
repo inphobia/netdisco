@@ -1,4 +1,4 @@
-<table id="nsbi-data-table" class="table table-bordered table-hover" width="100%" cellspacing="0">
+<table id="nsbi-data-table" class="table table-bordered table-hover">
   <thead>
   <tr>
     <th>Model</th>
@@ -16,8 +16,9 @@
     </td>
     <td>
       <a class="nd_linkcell" href="[% search_device %]&q=[% row.os_ver | uri %]&vendor=[% row.vendor | uri %]&model=[% row.model | uri %]&os=[% row.os | uri %]&os_ver=[% row.os_ver | uri %]&matchall=on">
-      [% row.os_ver | html_entity %]</a> </td> <td>[% row.os_ver_count | html_entity %]
+        [% row.os_ver | html_entity %]</a>
     </td>
+    <td>[% row.os_ver_count | html_entity %]</td>
   </tr>
   [% END %]
   </tbody>
