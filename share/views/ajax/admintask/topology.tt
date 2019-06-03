@@ -35,7 +35,9 @@
       </div>
     </td>
     <td class="nd_center-cell">
-      <button class="btn btn-small nd_adminbutton" name="add" type="submit"><i class="icon-plus-sign"></i> Add</button>
+      <button class="btn btn-small nd_adminbutton" name="add" type="submit">
+        <i class="icon-plus-sign"></i>Add
+      </button>
     </td>
   </tr>
   [% SET count = 0 %]
