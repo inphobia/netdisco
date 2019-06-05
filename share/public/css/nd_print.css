@@ -20,6 +20,7 @@ body {
   top: 45px;
 }
 
-a::after {
+/* TODO: is this a pseudo element or class? for now use single :  */
+a:after {
   content: "" !important;
 }
