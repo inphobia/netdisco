@@ -1,0 +1,61 @@
+TODO:
+jyuery-history
+natural.js
+portsort.js
+toastr.ks
+
+awesome-bootstrap-checkbox.css
+bootstrap-tree.css
+font awesome
+toaster.css
+
+
+bootstrap-4.3.1-dist -> official
+	bootstrap.css
+	bootstrap.js
+
+bootstrap4-toggle 3.4.0 -> https://github.com/gitbrent/
+	bootstrap4-toggle.css
+	bootstrap4-toggle.js
+
+underscore.js 1.9.1 -> github.com/jashkenas/underscore
+	underscore.js
+
+he.js 1.2.0 -> https://github.com/mathiasbynens/he/
+	he.js
+
+moment?
+
+d3 5.9.2-> https://d3js.org
+	d3.js
+
+d3-force-apex-plugin 3.1.0 (force-network-chart?) -> https://ogobrecht.github.io/d3-force-apex-plugin/
+	d3-force-3.1.0.css
+	d3-force-3.1.0.js
+
+datarangepicker 3.0.5 -> https://github.com/dangrossman/daterangepicker
+	daterangepicker.css
+	daterangepicker.js
+	moment.min.js
+
+datatables.net-bs4 1.10.19 -> http://datatables.net
+	dataTables.bootstrap4.css
+	dataTables.bootstrap4.js
+
+datables for jquery 1.10.19 ->
+	jquery.dataTables.js
+
+datatables plugins 1.10.19 -> https://github.com/DataTables/Plugins
+	sorting/ip-address.js -> dataTables.ip-address-sort.js
+	type-detection/ip-address.js -> dataTables.ip-address-detect.js
+
+jquery 3.4.1
+	jquery.js
+
+floatthead 2.1.3 -> github.com/mkoryak/floatThead
+
+jquiry ui smoothness theme
+
+qtip2 master-20190607 -> https://github.com/qTip2/qTip2/tree/master/dist
+	jquery.qtip.css
+	jquery.qtip.js

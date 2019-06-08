@@ -1,4 +1,4 @@
-/**
+/*
  * The following plug-in uses a modified version of the [naturalSort() function by Jim
  * Palmer](http://www.overset.com/2008/09/01/javascript-natural-sort-algorithm-with-unicode-support) to provide natural sorting in DataTables.
  *

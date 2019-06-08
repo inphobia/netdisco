@@ -1,4 +1,4 @@
-/**
+/*
  * QUnit-TAP - A TAP Output Producer Plugin for QUnit
  *
  * https://github.com/twada/qunit-tap

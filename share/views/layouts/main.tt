@@ -1,29 +1,26 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xml:lang="en" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=[% settings.charset | html_entity %]"/>
   <link rel="shortcut icon" href="[% uri_base %]/images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="[% uri_base %]/images/favicon.ico" type="image/x-icon">
   <title>Netdisco</title>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery-latest.min.js"></script>
-  <!--  <script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.1.1.js"></script> -->
-  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery-ui.custom.min.js"></script>
+  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery.js"></script>
+  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery-ui.js"></script>
   <script type="text/javascript" src="[% uri_base %]/javascripts/jquery-history.js"></script>
-  <!--  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery.cookie.js"></script> -->
   <script type="text/javascript" src="[% uri_base %]/javascripts/jquery-deserialize.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/bootstrap.min.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/bootstrap2-toggle.min.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/underscore.min.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery.qtip.min.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/d3-3.5.17.min.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/d3-force-network-chart.js"></script>
+  <script type="text/javascript" src="[% uri_base %]/javascripts/bootstrap.js"></script>
+  <script type="text/javascript" src="[% uri_base %]/javascripts/bootstrap4-toggle.js"></script>
+  <script type="text/javascript" src="[% uri_base %]/javascripts/underscore.js"></script>
+  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery.qtip.js"></script>
+  <script type="text/javascript" src="[% uri_base %]/javascripts/d3.js"></script>
+  <script type="text/javascript" src="[% uri_base %]/javascripts/d3-force-3.1.0.js"></script>
   <script type="text/javascript" src="[% uri_base %]/javascripts/toastr.js"></script>
   <script type="text/javascript" src="[% uri_base %]/javascripts/jquery.floatThead.js"></script>
   <script type="text/javascript" src="[% uri_base %]/javascripts/daterangepicker.js"></script>
   <script type="text/javascript" src="[% uri_base %]/javascripts/moment.min.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery.dataTables.min.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/dataTables.bootstrap.js"></script>
+  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery.dataTables.js"></script>
+  <script type="text/javascript" src="[% uri_base %]/javascripts/dataTables.bootstrap4.js"></script>
   <script type="text/javascript" src="[% uri_base %]/javascripts/dataTables.ip-address-detect.js"></script>
   <script type="text/javascript" src="[% uri_base %]/javascripts/dataTables.ip-address-sort.js"></script>
   <script type="text/javascript" src="[% uri_base %]/javascripts/he.js"></script>
@@ -43,18 +40,18 @@
     <script type="text/javascript" src="[% uri_base %]/plugin/[% add_js %]/[% add_js %].js"></script>
   [% END %]
 
-  <link rel="stylesheet" href="[% uri_base %]/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="[% uri_base %]/css/bootstrap2-toggle.min.css"/>
+  <link rel="stylesheet" href="[% uri_base %]/css/bootstrap.css"/>
+  <link rel="stylesheet" href="[% uri_base %]/css/bootstrap4-toggle.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/awesome-bootstrap-checkbox.css"/>
-  <link rel="stylesheet" href="[% uri_base %]/css/jquery.qtip.min.css"/>
-  <link rel="stylesheet" href="[% uri_base %]/css/smoothness/jquery-ui.custom.min.css"/>
+  <link rel="stylesheet" href="[% uri_base %]/css/jquery.qtip.css"/>
+  <link rel="stylesheet" href="[% uri_base %]/css/smoothness/jquery-ui.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/font-awesome.min.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/toastr.css"/>
-  <link rel="stylesheet" href="[% uri_base %]/css/d3-force-network-chart.css"/>
+  <link rel="stylesheet" href="[% uri_base %]/css/d3-force-3.1.0.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/netdisco.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/bootstrap-tree.css"/>
-  <link rel="stylesheet" href="[% uri_base %]/css/daterangepicker-bs2.css"/>
-  <link rel="stylesheet" href="[% uri_base %]/css/dataTables.bootstrap.css"/>
+  <link rel="stylesheet" href="[% uri_base %]/css/daterangepicker.css"/>
+  <link rel="stylesheet" href="[% uri_base %]/css/dataTables.bootstrap4.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/nd_print.css" media="print"/>
 
   [% FOREACH add_css IN settings._additional_css %]
