@@ -3,7 +3,7 @@
  * notation / colon. This can be most useful when using DataTables for a
  * networking application, and reporting information containing IP address.
  *
- *  @name IP addresses 
+ *  @name IP addresses
  *  @summary Sort IP addresses numerically
  *  @author Dominique Fournier
  *  @author Brad Wasson
@@ -30,13 +30,13 @@ jQuery.extend( jQuery.fn.dataTableExt.oSort, {
 
 		a = a.replace(/<[\s\S]*?>/g, "");
 		//IPv4:Port
-                t = a.split(":");
-                if (t.length == 2){
-                        m = t[0].split(".");
-                }
-                else {
-                        m = a.split(".");
-                }
+		t = a.split(":");
+		if (t.length == 2){
+			m = t[0].split(".");
+		}
+		else {
+			m = a.split(".");
+		}
 		n = a.split(":");
 		x = "";
 		xa = "";
