@@ -95,7 +95,7 @@
     });
 
     // job control refresh icon should reload the page
-    $('#nd_countdown-refresh').click(function(event) {
+    $('#nd_countdown-refresh').on("click", function(event) {
       event.preventDefault();
       for (var i = 0; i < nd_timers.length; i++) {
           clearTimeout(nd_timers[i]);
@@ -104,7 +104,7 @@
     });
 
     // job control pause/play icon switcheroo
-    $('#nd_countdown-control').click(function(event) {
+    $('#nd_countdown-control').on("click", function(event) {
       event.preventDefault();
       var icon = $('#nd_countdown-control-icon');
       icon.toggleClass('icon-pause icon-play text-error text-success');

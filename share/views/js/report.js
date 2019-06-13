@@ -26,7 +26,7 @@
     form_inputs.change(function() {device_form_state($(this))});
 
     // handler for bin icon in search forms
-    $('.nd_field-clear-icon').click(function() {
+    $('.nd_field-clear-icon').on("click", function() {
       var name = $(this).data('btn-for');
       var input = $('[name=' + name + ']');
       input.val('');

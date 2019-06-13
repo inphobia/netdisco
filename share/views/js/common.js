@@ -131,7 +131,7 @@
     // on page load, load the content for the active tab
     [% IF params.tab %]
     [% IF params.tab == 'ipinventory' OR params.tab == 'subnets' %]
-      $('#[% params.tab %]_submit').click();
+      $('#[% params.tab %]_submit').trigger("click");
     [% ELSE %]
       $('#[% params.tab %]_form').trigger("submit");
     [% END %]

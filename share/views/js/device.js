@@ -52,7 +52,7 @@
     });
 
     // handler for trashcan icon in port filter box
-    $('.nd_field-clear-icon').click(function() {
+    $('.nd_field-clear-icon').on("click", function() {
       portfilter.val('');
       $('#nd_ports-form-prefer-field').attr('value', '');
       $('#ports_form').trigger('submit');
