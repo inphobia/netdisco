@@ -11,11 +11,17 @@ major items:
    * sidebar needs to be revisited
    * menus only go 1 level deep atm
  * go through jquery deprecation warnings & fix them
+ ! searches (and most likely other navigation) seem to cut of the url, which makes them fail:
+    querystring seems no longer to be passed:
+      old: GET /ajax/content/device/details?tab=details&q=pseudo2&f= HTTP/1.1
+      new: GET /ajax/content/device/details? HTTP/1.
+      http://api.jquery.com/jquery.param/
  * move netdisco css to scss format
  * how to handle "csrftoken"
  * netmap/d3 tables have not been considered at all
  * csv export, is tt the way to go or use datatables plugin?
  * draft target specs/standards we aim for
+ * typeahead needs to be revised
 
 follow-up:
  * tt2 needs to start stripping whitespace
