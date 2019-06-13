@@ -8,11 +8,14 @@
   <link rel="stylesheet" href="[% uri_base %]/css/datatables.bootstrap4.min.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/jquery.typeahead.min.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/daterangepicker.css" />
+  <link rel="stylesheet" href="[% uri_base %]/css/netdisco.css"/>
 
   <!-- todo check links  -->
   <link rel="shortcut icon" href="[% uri_base %]/images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="[% uri_base %]/images/favicon.ico" type="image/x-icon">
 
+
+  <!-- -->
   <link rel="stylesheet" href="[% uri_base %]/css/bootstrap4-toggle.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/awesome-bootstrap-checkbox.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/jquery.qtip.css"/>
@@ -20,9 +23,10 @@
   <link rel="stylesheet" href="[% uri_base %]/css/font-awesome.min.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/toastr.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/d3-force-3.1.0.css"/>
-  <link rel="stylesheet" href="[% uri_base %]/css/netdisco.css"/>
+
   <link rel="stylesheet" href="[% uri_base %]/css/bootstrap-tree.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/nd_print.css" media="print"/>
+
 
   [% FOREACH add_css IN settings._additional_css %]
     <link rel="stylesheet" href="[% uri_base %]/plugin/[% add_css %]/[% add_css %].css"/>
@@ -32,11 +36,13 @@
 <body>
 
 <script src="[% uri_base %]/javascripts/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.1.0.js"></script>
 <script src="[% uri_base %]/javascripts/popper.min.js"></script>
 <script src="[% uri_base %]/javascripts/bootstrap.min.js"></script>
 <script src="[% uri_base %]/javascripts/jquery.datatables.min.js"></script>
 <script src="[% uri_base %]/javascripts/datatables.bootstrap4.min.js"></script>
 <script src="[% uri_base %]/javascripts/underscore.min.js"></script>
+<script src="[% uri_base %]/javascripts/jquery-deserialize.js"></script>
 <script src="[% uri_base %]/javascripts/jquery.typeahead.min.js"></script>
 <script src="[% uri_base %]/javascripts/he.js"></script>
 <script src="[% uri_base %]/javascripts/jquery.floatthead.min.js"></script>
@@ -50,12 +56,14 @@
 </script>
 
 [% IF user_has_role('port_control') %]
-<script type="text/javascript" src="[% uri_base %]/javascripts/netdisco_portcontrol.js"></script>
+<script src="[% uri_base %]/javascripts/netdisco_portcontrol.js"></script>
 [% END %]
 
 [% FOREACH add_js IN settings._additional_javascript %]
 <script src="[% uri_base %]/plugin/[% add_js %]/[% add_js %].js"></script>
 [% END %]
+
+
 
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
