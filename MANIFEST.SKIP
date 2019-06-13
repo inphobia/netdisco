@@ -79,6 +79,11 @@ README.md
 # ignore intellij project directory
 \B\.idea
 
+# external sources
+# TODO
+#  use github reference (subtree or submodule) with explicit version tag instead of copying sources
+^externalsrc
+
 # TODO:
 #  check if manifest.skip syntax is ok
 #  are mostly intellij artefacts
