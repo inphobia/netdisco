@@ -1,8 +1,41 @@
 TODO:
-jyuery-history
+
+design:
+ * is tt2 still the way to go?
+ * is bootstrap the framework we want to stick with?
+ * how do we handle api access? (different codepaths or unified?)
+
+
+major items:
+ * get bootstrap stylesheet / website layout in shape
+   * sidebar needs to be revisited
+   * menus only go 1 level deep atm
+ * go through jquery deprecation warnings & fix them
+ * move netdisco css to scss format
+ * how to handle "csrftoken"
+ * netmap/d3 tables have not been considered at all
+ * csv export, is tt the way to go or use datatables plugin?
+ * draft target specs/standards we aim for
+
+follow-up:
+ * tt2 needs to start stripping whitespace
+ * provide dark theme?
+ * figure out a way to handle external deps (like jquery versions, bootstrap css templates)
+
+targets:
+ * html5
+ * css3
+ * ecmascript 6?
+ * responsive design seems to be the only option
+
+
+
+
+TODO:
+jquery-history
 natural.js
 portsort.js
-toastr.ks
+toastr.js
 
 awesome-bootstrap-checkbox.css
 bootstrap-tree.css
@@ -10,52 +43,88 @@ font awesome
 toaster.css
 
 
-bootstrap-4.3.1-dist -> official
-	bootstrap.css
-	bootstrap.js
 
-bootstrap4-toggle 3.4.0 -> https://github.com/gitbrent/
-	bootstrap4-toggle.css
-	bootstrap4-toggle.js
 
-underscore.js 1.9.1 -> github.com/jashkenas/underscore
-	underscore.js
 
-he.js 1.2.0 -> https://github.com/mathiasbynens/he/
-	he.js
 
-moment?
 
-d3 5.9.2-> https://d3js.org
-	d3.js
 
-d3-force-apex-plugin 3.1.0 (force-network-chart?) -> https://ogobrecht.github.io/d3-force-apex-plugin/
-	d3-force-3.1.0.css
-	d3-force-3.1.0.js
+XXX
 
-datarangepicker 3.0.5 -> https://github.com/dangrossman/daterangepicker
-	daterangepicker.css
-	daterangepicker.js
-	moment.min.js
+toaster from bootstrap?
+fonts
+other stuff that got included in bootstrap/datatables?
 
-datatables.net-bs4 1.10.19 -> http://datatables.net
-	dataTables.bootstrap4.css
-	dataTables.bootstrap4.js
 
-datables for jquery 1.10.19 ->
-	jquery.dataTables.js
+XXX
 
-datatables plugins 1.10.19 -> https://github.com/DataTables/Plugins
-	sorting/ip-address.js -> dataTables.ip-address-sort.js
-	type-detection/ip-address.js -> dataTables.ip-address-detect.js
 
-jquery 3.4.1
-	jquery.js
+javascript current versions:
+----------------------------
 
-floatthead 2.1.3 -> github.com/mkoryak/floatThead
+DONE:
+-----
+  jquery 3.4.1
+    jquery.min.js
 
-jquiry ui smoothness theme
+  bootstrap-4.3.1-dist -> official
+    bootstrap.min.css
+    bootstrap.min.js
 
-qtip2 master-20190607 -> https://github.com/qTip2/qTip2/tree/master/dist
-	jquery.qtip.css
-	jquery.qtip.js
+  https://github.com/moment/moment 2.24.0
+    moment.min.js
+
+  popper 1.15.0
+    popper.min.js
+
+  jquery typeahead 2.10.6
+    jquery.typeahead.min.js
+    jquery.typeahead.min.css
+
+  floatthead commit df5ae74224d3c26a0cba7312945a37e542cf4982 -> github.com/mkoryak/floatThead
+    jquery.floatthead.min.js
+
+  underscore.min.js 1.9.1 -> github.com/jashkenas/underscore
+    underscore.min.js
+
+  he.js 1.2.0 -> https://github.com/mathiasbynens/he/
+    he.js
+
+  datarangepicker 3.0.5 -> https://github.com/dangrossman/daterangepicker
+    daterangepicker.css
+    daterangepicker.js
+
+  datatables 1.10.19 for jquery3
+    jquery.datatables.min.js
+    datatables.bootstrap4.min.js
+    datatables.bootstrap4.min.css
+
+upgraded but not checked if working/needed:
+-------------------------------------------
+
+  datatables plugins 1.10.19 -> https://github.com/DataTables/Plugins
+    sorting/ip-address.js -> datatables.ip-address-sort.js commit 934ce3a6922b1cd7a948b2128acd7e128a7502ee
+    type-detection/ip-address.js -> datatables.ip-address-detect.js 4f29d7fda6e04574c8a47e7628a039b074c8ef66
+
+  https://github.com/kflorence/jquery-deserialize/ 2.0.0-rc1
+    jquery-deserialize.js
+
+
+not done:
+---------
+  d3 5.9.2-> https://d3js.org
+    d3.js
+
+  d3-force-apex-plugin 3.1.0 (force-network-chart?) -> https://ogobrecht.github.io/d3-force-apex-plugin/
+    d3-force-3.1.0.css
+    d3-force-3.1.0.js
+
+  jquiry ui smoothness theme
+
+  qtip2 master-20190607 -> https://github.com/qTip2/qTip2/tree/master/dist
+    jquery.qtip.css
+    jquery.qtip.js
+
+  bootstrap4-toggle 3.4.0 -> https://github.com/gitbrent/
+    bootstrap4-toggle.css
+    bootstrap4-toggle.js
