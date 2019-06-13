@@ -36,6 +36,7 @@
 <script src="[% uri_base %]/javascripts/bootstrap.min.js"></script>
 <script src="[% uri_base %]/javascripts/jquery.datatables.min.js"></script>
 <script src="[% uri_base %]/javascripts/datatables.bootstrap4.min.js"></script>
+<script src="[% uri_base %]/javascripts/underscore.min.js"></script>
 <script src="[% uri_base %]/javascripts/jquery.typeahead.min.js"></script>
 <script src="[% uri_base %]/javascripts/he.js"></script>
 <script src="[% uri_base %]/javascripts/jquery.floatthead.min.js"></script>
