@@ -1,5 +1,14 @@
 TODO:
 
+resources:
+  https://developer.mozilla.org/en-US/docs/Learn (most inclusive omnibus on web standards)
+  https://www.w3schools.com/ (overview of most of the things you need to know or consider)
+  https://standardjs.com/ ("standard" formatting guidelines for javascript)
+  https://css-tricks.com/
+  https://html5please.com/ (general guidelines on which features are widely used)
+  https://caniuse.com/ (browser version <-> feature support, with list of known issues)
+
+
 design:
  * is tt2 still the way to go?
  * is bootstrap the framework we want to stick with?
@@ -27,6 +36,44 @@ follow-up:
  * tt2 needs to start stripping whitespace
  * provide dark theme?
  * figure out a way to handle external deps (like jquery versions, bootstrap css templates)
+ * code style/linting guidelines & config files
+
+
+
+
+
+create regression framework:
+ * validate web output:
+ ----------------------
+    * goal:
+      * make sure web output doesn't change unplanned
+        -> catch changes in upstream frameworks/versions
+        -> quick check issue is netdisco or browser related
+    * requires:
+        * preloaded database with static content (pgdump?)
+        * headless browser to parse webpages (selenium?)
+        * creating comprehensive list of queries & expected results
+        * perhaps netdisco-docker is a good match for this
+    * challenges:
+       * keeping test up to date
+       * keeping coverage complete
+
+ * data validation:
+ ------------------
+    * goal
+      * verify data format/api/whatever doesn't deviate without intent
+      * preemptive tests to not reintroduce fixed issues
+    * requires
+      * static data set via snmpsim?
+      * comprehensive list of items to test
+        -> topology (cdp, lldp, routing stuff)
+        -> exotic devices?
+        -> known faulty results (device returns incorrect/incomplete info)
+      * run netdisco-do discover against snmpsim & compare database with predefined expected layout?
+    * challenges:
+      * external deps can also result in changed results (snmp::info changes...), but catching these could be relevant too
+      * keeping dataset relevant will be a challenge
+
 
 targets:
  * html5
