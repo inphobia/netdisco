@@ -246,11 +246,9 @@ share/environments/deployment.yml
 share/public/500.html
 share/public/css/awesome-bootstrap-checkbox.css
 share/public/css/bootstrap-tree.css
-share/public/css/bootstrap.css
 share/public/css/bootstrap.min.css
 share/public/css/bootstrap4-toggle.css
 share/public/css/d3-force-3.1.0.css
-share/public/css/dataTables.bootstrap4.css
 share/public/css/datatables.bootstrap4.min.css
 share/public/css/daterangepicker.css
 share/public/css/font-awesome.min.css
@@ -297,12 +295,10 @@ share/public/images/splashyfish_left.png
 share/public/images/splashyfish_right.png
 share/public/images/tango_sweep.png
 share/public/images/vaga_copy.png
-share/public/javascripts/bootstrap.js
 share/public/javascripts/bootstrap.min.js
 share/public/javascripts/bootstrap4-toggle.js
 share/public/javascripts/d3-force-3.1.0.js
 share/public/javascripts/d3.js
-share/public/javascripts/dataTables.bootstrap4.js
 share/public/javascripts/datatables.bootstrap4.min.js
 share/public/javascripts/datatables.ip-address-detect.js
 share/public/javascripts/datatables.ip-address-sort.js
@@ -311,11 +307,8 @@ share/public/javascripts/he.js
 share/public/javascripts/jquery-deserialize.js
 share/public/javascripts/jquery-history.js
 share/public/javascripts/jquery-ui.js
-share/public/javascripts/jquery.dataTables.js
 share/public/javascripts/jquery.datatables.min.js
-share/public/javascripts/jquery.floatthead.js
 share/public/javascripts/jquery.floatthead.min.js
-share/public/javascripts/jquery.js
 share/public/javascripts/jquery.min.js
 share/public/javascripts/jquery.qtip.js
 share/public/javascripts/jquery.typeahead.min.js
