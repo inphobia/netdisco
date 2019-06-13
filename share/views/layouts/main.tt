@@ -1,46 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta http-equiv="Content-type" content="text/html; charset=[% settings.charset | html_entity %]"/>
+  <title>Netdisco</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="[% uri_base %]/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="[% uri_base %]/css/datatables.bootstrap4.min.css"/>
+  <link rel="stylesheet" href="[% uri_base %]/css/jquery.typeahead.min.css"/>
+  <link rel="stylesheet" href="[% uri_base %]/css/daterangepicker.css" />
+
+  <!-- todo check links  -->
   <link rel="shortcut icon" href="[% uri_base %]/images/favicon.ico" type="image/x-icon">
   <link rel="icon" href="[% uri_base %]/images/favicon.ico" type="image/x-icon">
-  <title>Netdisco</title>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery-ui.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery-history.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery-deserialize.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/bootstrap.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/bootstrap4-toggle.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/underscore.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery.qtip.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/d3.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/d3-force-3.1.0.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/toastr.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery.floatThead.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/daterangepicker.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/moment.min.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/jquery.dataTables.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/dataTables.bootstrap4.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/dataTables.ip-address-detect.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/dataTables.ip-address-sort.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/he.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/natural.js"></script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/portsort.js"></script>
-  <script type="text/javascript">
-    var uri_base = '[% uri_base %]';
-    var nd_check_userlog = '[% settings.check_userlog %]';
-  </script>
-  <script type="text/javascript" src="[% uri_base %]/javascripts/netdisco.js"></script>
 
-  [% IF user_has_role('port_control') %]
-    <script type="text/javascript" src="[% uri_base %]/javascripts/netdisco_portcontrol.js"></script>
-  [% END %]
-
-  [% FOREACH add_js IN settings._additional_javascript %]
-    <script type="text/javascript" src="[% uri_base %]/plugin/[% add_js %]/[% add_js %].js"></script>
-  [% END %]
-
-  <link rel="stylesheet" href="[% uri_base %]/css/bootstrap.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/bootstrap4-toggle.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/awesome-bootstrap-checkbox.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/jquery.qtip.css"/>
@@ -50,15 +22,40 @@
   <link rel="stylesheet" href="[% uri_base %]/css/d3-force-3.1.0.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/netdisco.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/bootstrap-tree.css"/>
-  <link rel="stylesheet" href="[% uri_base %]/css/daterangepicker.css"/>
-  <link rel="stylesheet" href="[% uri_base %]/css/dataTables.bootstrap4.css"/>
   <link rel="stylesheet" href="[% uri_base %]/css/nd_print.css" media="print"/>
 
   [% FOREACH add_css IN settings._additional_css %]
     <link rel="stylesheet" href="[% uri_base %]/plugin/[% add_css %]/[% add_css %].css"/>
   [% END %]
+
 </head>
 <body>
+
+<script src="[% uri_base %]/javascripts/jquery.min.js"></script>
+<script src="[% uri_base %]/javascripts/popper.min.js"></script>
+<script src="[% uri_base %]/javascripts/bootstrap.min.js"></script>
+<script src="[% uri_base %]/javascripts/jquery.datatables.min.js"></script>
+<script src="[% uri_base %]/javascripts/datatables.bootstrap4.min.js"></script>
+<script src="[% uri_base %]/javascripts/jquery.typeahead.min.js"></script>
+<script src="[% uri_base %]/javascripts/he.js"></script>
+<script src="[% uri_base %]/javascripts/jquery.floatthead.min.js"></script>
+<script src="[% uri_base %]/javascripts/moment.min.js"></script>
+<script src="[% uri_base %]/javascripts/daterangepicker.js"></script>
+<script src="[% uri_base %]/javascripts/netdisco.js"></script>
+
+<script type="text/javascript">
+  var uri_base = '[% uri_base %]';
+  var nd_check_userlog = '[% settings.check_userlog %]';
+</script>
+
+[% IF user_has_role('port_control') %]
+<script type="text/javascript" src="[% uri_base %]/javascripts/netdisco_portcontrol.js"></script>
+[% END %]
+
+[% FOREACH add_js IN settings._additional_javascript %]
+<script src="[% uri_base %]/plugin/[% add_js %]/[% add_js %].js"></script>
+[% END %]
+
 <div class="navbar navbar-inverse navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">

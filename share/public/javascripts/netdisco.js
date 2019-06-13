@@ -3,20 +3,21 @@
 function do_search (event, tab) {
   var form   = '#' + tab + '_form';
   var target = '#' + tab + '_pane';
-  var query  = $(form).serialize();
+  var query  = $( "#form" ).serialize();
 
   // stop form from submitting normally
   event.preventDefault();
 
   // hide or show sidebars depending on previous state,
   // and whether the sidebar contains any content (detected by TT)
-  if (has_sidebar[tab] == 0) {
+  if (has_sidebar[tab] === 0) {
+    // language=JQuery-CSS
     $('.nd_sidebar, #nd_sidebar-toggle-img-out').hide();
-    $('.content').css('margin-right', '10px');
+    $( '.content' ).css("margin-right", "10px");
   }
   else {
     if (sidebar_hidden) {
-      $('#nd_sidebar-toggle-img-out').show();
+      $( "#nd_sidebar-toggle-img-out").show();
     }
     else {
       $('.content').css('margin-right', '215px');
@@ -39,7 +40,7 @@ function do_search (event, tab) {
         );
         return;
       }
-      if (response == "") {
+      if (response === "") {
         $(target).html(
           '<div class="span2 alert alert-info">No matching records.</div>'
         );
@@ -47,8 +48,8 @@ function do_search (event, tab) {
 
       // delegate to any [device|search] specific JS code
       $('div.content > div.tab-content table.nd_floatinghead').floatThead({
-        scrollingTop: 40
-        ,useAbsolutePositioning: false
+        scrollingTop: 40,
+        useAbsolutePositioning: false
       });
       inner_view_processing(tab);
     }
@@ -70,27 +71,29 @@ var is_from_history_plugin = 0;
 // on tab change, hide previous tab's search form and show new tab's
 // search form. also trigger to load the content for the newly active tab.
 function update_content(from, to) {
+  var from_form;
+  var to_form;
   $('#' + from + '_search').toggleClass('active');
   $('#' + to + '_search').toggleClass('active');
 
-  var to_form = '#' + to + '_form';
-  var from_form = '#' + from + '_form';
+  to_form = '#' + to + '_form';
+  from_form = '#' + from + '_form';
 
   // page title
   var pgtitle = 'Netdisco';
   if ($('#nd_device-name').text().length) {
-    var pgtitle = $('#nd_device-name').text() +' - '+ $('#'+ to + '_link').text();
+    pgtitle = $('#nd_device-name').text() +' - '+ $('#'+ to + '_link').text();
   }
 
   // navbar text decoration special case
-  if (to != 'device') {
+  if (to !== 'device') {
     $('#nq').css('text-decoration', 'none');
   }
   else {
     form_inputs.each(function() {device_form_state($(this))});
   }
 
-  if (window.History && window.History.enabled && is_from_state_event == 0) {
+  if (window.History && window.History.enabled && is_from_state_event === 0) {
     is_from_history_plugin = 1;
     window.History.pushState(
       {name: to, fields: $(to_form).serializeArray()},
@@ -106,7 +109,7 @@ function update_content(from, to) {
 if (window.History && window.History.enabled) {
   var History = window.History;
   History.Adapter.bind(window, "statechange", function() {
-    if (is_from_history_plugin == 0) {
+    if (is_from_history_plugin === 0) {
       is_from_state_event = 1;
       var State = History.getState();
       // History.log(State.data.name, State.title, State.url);
@@ -120,37 +123,38 @@ if (window.History && window.History.enabled) {
 // if any field in Search Options has content, highlight in green
 function device_form_state(e) {
   var with_val = $.grep(form_inputs,
-                        function(n,i) {return($(n).prop('value') != "")}).length;
+                        function(n,i) {return($(n).prop('value') !== "")}).length;
   var with_text = $.grep(form_inputs.not('select'),
-                          function(n,i) {return($(n).val() != "")}).length;
+                          function(n,i) {return($(n).val() !== "")}).length;
 
-  if (e.prop('value') == "") {
+  var id;
+  if (e.prop('value') === "") {
     e.parent(".clearfix").removeClass('success');
-    var id = '#' + e.attr('name') + '_clear_btn';
+    id = '#' + e.attr('name') + '_clear_btn';
     $(id).hide();
 
     // if form has no field val, clear strikethough
-    if (with_val == 0) {
+    if (with_val === 0) {
       $('#nq').css('text-decoration', 'none');
     }
 
     // for text inputs only, extra formatting
-    if (with_text == 0) {
+    if (with_text === 0) {
       $('.nd_field-copy-icon').show();
     }
   }
   else {
     e.parent(".clearfix").addClass('success');
-    var id = '#' + e.attr('name') + '_clear_btn';
+    id = '#' + e.attr('name') + '_clear_btn';
     $(id).show();
 
     // if form still has any field val, set strikethough
-    if (e.parents('form[action="/search"]').length > 0 && with_val != 0) {
+    if (e.parents('form[action="/search"]').length > 0 && with_val !== 0) {
       $('#nq').css('text-decoration', 'line-through');
     }
 
     // if we're text, hide copy icon when we get a val
-    if (e.attr('type') == 'text') {
+    if (e.attr('type') === 'text') {
       $('.nd_field-copy-icon').hide();
     }
   }
@@ -172,9 +176,9 @@ $(document).ready(function() {
       return $.get( uri_base + '/ajax/data/devicename/typeahead', { query: query }, function (data) {
         return process(data);
       });
-    }
-    ,matcher: function () { return true; } // trust backend
-    ,minLength: 3
+    },
+    matcher: function () { return true; }, // trust backend
+    minLength: 3
   });
 
   // activate tooltips
@@ -229,8 +233,8 @@ $(document).ready(function() {
     $('.content').css('margin-right', '10px');
     $('div.content > div.tab-content table.nd_floatinghead').floatThead('destroy');
     $('div.content > div.tab-content table.nd_floatinghead').floatThead({
-      scrollingTop: 40
-      ,useAbsolutePositioning: false
+      scrollingTop: 40,
+      useAbsolutePositioning: false
     });
     sidebar_hidden = 1;
   });
@@ -239,8 +243,8 @@ $(document).ready(function() {
     $('.content').css('margin-right', '215px');
     $('div.content > div.tab-content table.nd_floatinghead').floatThead('destroy');
     $('div.content > div.tab-content table.nd_floatinghead').floatThead({
-      scrollingTop: 40
-      ,useAbsolutePositioning: false
+      scrollingTop: 40,
+      useAbsolutePositioning: false
     });
     $('.nd_sidebar').toggle(250);
     if (! $('.nd_sidebar').hasClass('nd_sidebar-pinned')) {
@@ -254,7 +258,7 @@ $(document).ready(function() {
   $('#nd_search-results li').delegate('a', 'click', function(event) {
     event.preventDefault();
     var from_li = $('.nav-tabs').find('> .active').first();
-    var to_li = $(this).parent('li')
+    var to_li = $(this).parent('li');
 
     from_li.toggleClass('active');
     to_li.toggleClass('active');
@@ -262,7 +266,7 @@ $(document).ready(function() {
     var from_id = from_li.find('a').attr('href');
     var to_id = $(this).attr('href');
 
-    if (from_id == to_id) {
+    if (from_id === to_id) {
       return;
     }
 
@@ -287,27 +291,27 @@ $(document).ready(function() {
   // activate daterange plugin
   $('#daterange').daterangepicker({
     ranges: {
-      'Today': [moment(), moment()]
-      ,'Yesterday': [moment().subtract('days', 1), moment().subtract('days', 1)]
-      ,'Last 7 Days': [moment().subtract('days', 6), moment()]
-      ,'Last 30 Days': [moment().subtract('days', 29), moment()]
-      ,'This Month': [moment().startOf('month'), moment().endOf('month')]
-      ,'Last Month': [moment().subtract('month', 1).startOf('month'), moment().subtract('month', 1).endOf('month')]
-    }
-    ,minDate: '2004-01-01'
-    ,showDropdowns: true
-    ,timePicker: false
-    ,opens: 'left'
-    ,format: 'YYYY-MM-DD'
-    ,separator: ' to '
-  }
-  ,function(start, end) {
+      'Today': [moment(), moment()],
+      'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+      'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+      'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+      'This Month': [moment().startOf('month'), moment().endOf('month')],
+      'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+    },
+    minDate: '2004-01-01',
+      showDropdowns: true,
+      timePicker: false,
+      opens: 'left',
+      format: 'YYYY-MM-DD',
+      separator: ' to '
+  },
+    function(start, end) {
     $('#daterange').trigger('input');
   });
 
   // handler for datepicker in node sidebar
   $('.nd_sidebar').on('input', '#daterange', function() {
-    if ($(this).prop('value') == '') {
+    if ($(this).prop('value') === '') {
       $('#daterange').parent('.clearfix').removeClass('success');
     }
     else {

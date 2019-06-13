@@ -68,6 +68,10 @@ div.content > div.tab-content table.nd_floatinghead thead {
   background-color: floralWhite;
 }
 
+.content {
+  background-color: #0b2e13;
+}
+
 /* jquery ui autocomplete scrollable */
 .ui-autocomplete {
   max-height: 200px;
@@ -793,3 +797,4 @@ div.nd_datatables-pager {
 td.nd_nowrap {
   white-space: nowrap;
 }
+

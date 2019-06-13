@@ -8,7 +8,7 @@ function port_control (e) {
       logmessage = $('#nd_portlog-log').val();
   $('#nd_portlog-log').val('');
 
-  if (nd_save_ok == false) {
+  if (nd_save_ok === false) {
     td.find('.nd_editable-cell-content').text(td.data('default'));
     td.blur();
     return;
@@ -16,23 +16,23 @@ function port_control (e) {
   nd_save_ok = false;
 
   $.ajax({
-    type: 'POST'
-    ,url: uri_base + '/ajax/portcontrol'
-    ,data: {
-      device:  td.data('for-device')
-      ,port:   td.data('for-port')
-      ,field:  td.data('field')
-      ,action: ($(e).data('action') || td.data('action'))
-      ,value:  td.text().trim()
-      ,reason: reason
-      ,log:    logmessage
-    }
-    ,success: function() {
+    type: 'POST',
+    url: uri_base + '/ajax/portcontrol',
+    data: {
+      device:  td.data('for-device'),
+      port:   td.data('for-port'),
+      field:  td.data('field'),
+      action: ($(e).data('action') || td.data('action')),
+      value:  td.text().trim(),
+      reason: reason,
+      log:    logmessage
+    },
+    success: function() {
       toastr.info('Submitted change request');
 
       // update all the screen furniture unless bouncing
       if (! $(e).hasClass('icon-bullseye')) {
-        if ($.trim(td.data('action')) == 'down') {
+        if ($.trim(td.data('action')) === 'down') {
           td.prev('td').html('<i class="icon-remove"></i>');
           $(e).toggleClass('icon-hand-down');
           $(e).toggleClass('icon-hand-up');
@@ -40,7 +40,7 @@ function port_control (e) {
           $(e).data('tooltip').options.title = 'Enable Port';
           td.data('action', 'up');
         }
-        else if ($.trim(td.data('action')) == 'up') {
+        else if ($.trim(td.data('action')) === 'up') {
           td.prev('td').html('<i class="icon-refresh icon-spin"></i>');
           $(e).toggleClass('icon-hand-up');
           $(e).toggleClass('icon-hand-down');
@@ -48,20 +48,20 @@ function port_control (e) {
           $(e).data('tooltip').options.title = 'Disable Port';
           td.data('action', 'down');
         }
-        else if ($.trim(td.data('action')) == 'false') {
+        else if ($.trim(td.data('action')) === 'false') {
           $(e).next('span').text('');
           $(e).toggleClass('nd_power-on');
           $(e).data('tooltip').options.title = 'Enable Power';
           td.data('action', 'true');
         }
-        else if ($.trim(td.data('action')) == 'true') {
+        else if ($.trim(td.data('action')) === 'true') {
           $(e).toggleClass('nd_power-on');
           $(e).data('tooltip').options.title = 'Disable Power';
           td.data('action', 'false');
         }
       }
-    }
-    ,error: function() {
+    },
+    error: function() {
       toastr.error('Failed to submit change request');
       td.find('.nd_editable-cell-content').text(td.data('default'));
       td.blur();
@@ -75,8 +75,8 @@ $(document).ready(function() {
   if (nd_check_userlog) {
     (function worker() {
       $.ajax({
-        url: uri_base + '/ajax/userlog'
-        ,success: function(data) {
+        url: uri_base + '/ajax/userlog',
+        success: function(data) {
           for (var i = 0; i < data['error'].length; i++) {
             toastr.error(data['error'][i], 'Failed Job:');
           }
@@ -85,8 +85,8 @@ $(document).ready(function() {
           }
           // Schedule next request when the current one's complete
           setTimeout(worker, 5000);
-        }
-        ,error: function() {
+        },
+        error: function() {
           // after failure, try less often
           setTimeout(worker, 60000);
         }
@@ -141,8 +141,8 @@ $(document).ready(function() {
   $('.tab-content').on('keydown', '[contenteditable=true]', function(event) {
     var cell = this,
         td = $(cell).closest('td'),
-        esc = event.which == 27,
-        nl  = event.which == 13;
+        esc = event.which === 27,
+        nl  = event.which === 13;
 
     if (esc) {
       $(cell).blur();
@@ -150,7 +150,7 @@ $(document).ready(function() {
     else if (nl) {
       event.preventDefault();
 
-      if (td.data('field') == 'c_pvid') {
+      if (td.data('field') === 'c_pvid') {
         $('#nd_portlog').one('hidden', function() {
           port_control(cell); // save
         });
