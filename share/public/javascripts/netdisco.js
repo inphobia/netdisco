@@ -11,7 +11,6 @@ function do_search (event, tab) {
   // hide or show sidebars depending on previous state,
   // and whether the sidebar contains any content (detected by TT)
   if (has_sidebar[tab] === 0) {
-    // language=JQuery-CSS
     $('.nd_sidebar, #nd_sidebar-toggle-img-out').hide();
     $( '.content' ).css("margin-right", "10px");
   }
@@ -114,7 +113,7 @@ if (window.History && window.History.enabled) {
       var State = History.getState();
       // History.log(State.data.name, State.title, State.url);
       $('#'+ State.data.name + '_form').deserialize(State.data.fields);
-      $('#'+ State.data.name + '_link').click();
+      $('#'+ State.data.name + '_link').trigger("click");
       is_from_state_event = 0;
     }
   });
@@ -185,10 +184,10 @@ $(document).ready(function() {
   $("[rel=tooltip]").tooltip({live: true});
 
   // bind submission to the navbar go icon
-  $('#navsearchgo').click(function() {
+  $('#navsearchgo').on("click", function() {
     $('#navsearchgo').parents('form').submit();
   });
-  $('.nd_navsearchgo-specific').click(function(event) {
+  $('.nd_navsearchgo-specific').on("click", function(event) {
     event.preventDefault();
     if ($('#nqbody').val()) {
       $(this).parents('form').append(
@@ -211,10 +210,10 @@ $(document).ready(function() {
   syncCheckBox = function() {
     $(this).parents('.add-on').toggleClass('active', $(this).is(':checked'));
   };
-  $('.add-on :checkbox').each(syncCheckBox).click(syncCheckBox);
+  $('.add-on :checkbox').each(syncCheckBox).on("click", syncCheckBox());
 
   // sidebar toggle - pinning
-  $('.nd_sidebar-pin').click(function() {
+  $('.nd_sidebar-pin').on("click", function() {
     $('.nd_sidebar').toggleClass('nd_sidebar-pinned');
     $('.nd_sidebar-pin').toggleClass('nd_sidebar-pin-clicked');
     // update tooltip note for current state
@@ -227,7 +226,7 @@ $(document).ready(function() {
   });
 
   // sidebar toggle - trigger in/out on image click()
-  $('#nd_sidebar-toggle-img-in').click(function() {
+  $('#nd_sidebar-toggle-img-in').on("click", function() {
     $('.nd_sidebar').toggle(250);
     $('#nd_sidebar-toggle-img-out').toggle();
     $('.content').css('margin-right', '10px');
@@ -238,7 +237,7 @@ $(document).ready(function() {
     });
     sidebar_hidden = 1;
   });
-  $('#nd_sidebar-toggle-img-out').click(function() {
+  $('#nd_sidebar-toggle-img-out').on("click", function() {
     $('#nd_sidebar-toggle-img-out').toggle();
     $('.content').css('margin-right', '215px');
     $('div.content > div.tab-content table.nd_floatinghead').floatThead('destroy');
