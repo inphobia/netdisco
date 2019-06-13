@@ -78,3 +78,13 @@ README.md
 
 # ignore intellij project directory
 \B\.idea
+
+# TODO:
+#  check if manifest.skip syntax is ok
+#  are mostly intellij artefacts
+^node_modules/
+package\.json
+yarn\.lock
+\.stylelintrc
+todo\.txt
+
