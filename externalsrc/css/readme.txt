@@ -1,5 +1,11 @@
 creating css files for bootstrap+netdisco from scss sources
 
+overrides go in custom.scss, then generate a netdisco.css file with the following command:
+sass --no-source-map custom.scss netdisco.css
+(needs node.js & sass installed)
+
+this will generate a complete replacement for bootstrap's css file.
+
 see:
 https://getbootstrap.com/docs/4.3/getting-started/theming/
 https://uxplanet.org/how-to-customize-bootstrap-b8078a011203

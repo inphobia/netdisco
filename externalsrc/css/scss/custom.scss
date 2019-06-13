@@ -1,0 +1,16 @@
+// netdisco custom css
+$body-bg: #3bffca;
+$body-color: #111;
+
+body {
+  padding-top: 50px;
+
+}
+
+.content {
+  background-color: #0b2e13;
+}
+
+// bootstrap import must come after overrides (first match wins)
+@import "../bootstrap/scss/bootstrap";
+
