@@ -63,12 +63,12 @@
 <script src="[% uri_base %]/plugin/[% add_js %]/[% add_js %].js"></script>
 [% END %]
 
-
-
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-inner">
+<!-- todo: inverse no longer supported -->
+<nav class="navbar fixed-top navbar-dark navbar-expand-lg">
+  <!-- todo: navbar-inner no longer supported
+  <div class="navbar-inner"> -->
     <div class="container">
-      <a class="brand" href="[% uri_for('/') %]">Netdisco</a>
+      <a class="navbar-brand" href="[% uri_for('/') %]">Netdisco</a>
       [% IF session.logged_in_user %]
         <ul class="nav">
           [% FOREACH ni IN settings._navbar_items %]
@@ -148,9 +148,11 @@
                  id="nq" name="q" value="[% display_name %]" type="text" autocomplete="off"/>
           <input name="firstsearch" type="hidden" value="on">
           <div class="btn-group nd_navbar-search-group">
+            <!-- todo: inverse no longer supported -->
             <button class="btn btn-inverse nd_navbar-search-icon">
               <span style="font-size: 18px;"><i id="navsearchgo" class="icon-search"></i></span>
             </button>
+            <!-- todo: inverse no longer supported -->
             <button class="btn btn-inverse dropdown-toggle nd_navbar-search-caret" data-toggle="dropdown">
               <span class="caret" style="border-top-color: #999; border-bottom-color: #999;"></span>
             </button>
@@ -186,8 +188,9 @@
         </ul>
       [% END %]
     </div>
-  </div>
-</div>
+  <!-- todo: navbar-inner no longer supported
+  </div> -->
+</nav>
 
 [% content %]
 
