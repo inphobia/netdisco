@@ -17,6 +17,18 @@ design:
 
 major items:
  * get bootstrap stylesheet / website layout in shape
+     ! go through bs3 changes:
+          -> https://github.com/twbs/bootstrap/pull/6342
+          -> https://getbootstrap.com/docs/3.4/migration/
+      * Drop bootstrap-typeahead.js.
+      * Default button now requires .btn-default class.
+      * Drop .btn-inverse.
+      * Checkboxes and radios now require an extra <div>.
+      * Dropped the .label-inverse variation
+      * Removed .navbar-inner and moved relevant styles to .navbar
+      * Remove submenus suport in dropdown menus.
+      * Updated navbar brand component
+     ! go through bs4 changes
    * sidebar needs to be revisited
    * menus only go 1 level deep atm
  * go through jquery deprecation warnings & fix them
