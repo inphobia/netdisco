@@ -4,7 +4,6 @@ $body-color: #111;
 
 body {
   padding-top: 50px;
-
 }
 
 .navbar .container {
@@ -17,4 +16,3 @@ body {
 
 // bootstrap import must come after overrides (first match wins)
 @import "../bootstrap/scss/bootstrap";
-
