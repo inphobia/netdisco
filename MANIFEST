@@ -313,7 +313,6 @@ share/public/javascripts/jquery.min.js
 share/public/javascripts/jquery.qtip.js
 share/public/javascripts/jquery.typeahead.min.js
 share/public/javascripts/moment.min.js
-share/public/javascripts/natural.js
 share/public/javascripts/netdisco.js
 share/public/javascripts/netdisco_portcontrol.js
 share/public/javascripts/popper.min.js

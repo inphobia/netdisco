@@ -176,6 +176,11 @@ upgraded but not checked if working/needed:
     jquery-deserialize.js
 
 
+removed:
+  datatables naturalsort, not referenced anywhere but used as basis for portsort.js
+    natural.js
+
+
 not done:
 ---------
   d3 5.9.2-> https://d3js.org
