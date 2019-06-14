@@ -32,6 +32,8 @@ major items:
      ! go through bs4 changes
    * sidebar needs to be revisited
    * menus only go 1 level deep atm
+   * document.ready() removed
+   * pseudodevice add no longer works
  * use <script> in body or <script type="text/javascript">, need to do anything with #PCDATA vs #CDATA?
  * css directory & changes need to be reviewed
  * go through jquery deprecation warnings & fix them
@@ -91,11 +93,13 @@ create regression framework:
 
 
 targets:
- * html5
+ * html5 or xhtml5?
  * css3
  * ecmascript 6?
  * responsive design seems to be the only option
 
+styleguide:
+ * include scripts in <head>, not at end of <body>. some templates use inline scripts which require netdisco.js (and most likely others) to be loaded alrdy.
 
 
 
