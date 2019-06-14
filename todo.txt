@@ -27,6 +27,7 @@ major items:
       * Dropped the .label-inverse variation
       * Removed .navbar-inner and moved relevant styles to .navbar
       * Remove submenus suport in dropdown menus.
+        -> https://stackoverflow.com/questions/18023493/bootstrap-dropdown-sub-menu-missing
       * Updated navbar brand component
      ! go through bs4 changes
    * sidebar needs to be revisited
