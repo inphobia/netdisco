@@ -32,6 +32,7 @@ major items:
      ! go through bs4 changes
    * sidebar needs to be revisited
    * menus only go 1 level deep atm
+ * use <script> in body or <script type="text/javascript">, need to do anything with #PCDATA vs #CDATA?
  * css directory & changes need to be reviewed
  * go through jquery deprecation warnings & fix them
  ! searches (and most likely other navigation) seem to cut of the url, which makes them fail:

@@ -35,34 +35,6 @@
 </head>
 <body>
 
-<script src="[% uri_base %]/javascripts/jquery.min.js"></script>
-<script src="https://code.jquery.com/jquery-migrate-3.1.0.js"></script>
-<script src="[% uri_base %]/javascripts/popper.min.js"></script>
-<script src="[% uri_base %]/javascripts/bootstrap.min.js"></script>
-<script src="[% uri_base %]/javascripts/jquery.datatables.min.js"></script>
-<script src="[% uri_base %]/javascripts/datatables.bootstrap4.min.js"></script>
-<script src="[% uri_base %]/javascripts/underscore.min.js"></script>
-<script src="[% uri_base %]/javascripts/jquery-deserialize.js"></script>
-<script src="[% uri_base %]/javascripts/jquery.typeahead.min.js"></script>
-<script src="[% uri_base %]/javascripts/he.js"></script>
-<script src="[% uri_base %]/javascripts/jquery.floatthead.min.js"></script>
-<script src="[% uri_base %]/javascripts/moment.min.js"></script>
-<script src="[% uri_base %]/javascripts/daterangepicker.js"></script>
-<script src="[% uri_base %]/javascripts/netdisco.js"></script>
-
-<script type="text/javascript">
-  var uri_base = '[% uri_base %]';
-  var nd_check_userlog = '[% settings.check_userlog %]';
-</script>
-
-[% IF user_has_role('port_control') %]
-<script src="[% uri_base %]/javascripts/netdisco_portcontrol.js"></script>
-[% END %]
-
-[% FOREACH add_js IN settings._additional_javascript %]
-<script src="[% uri_base %]/plugin/[% add_js %]/[% add_js %].js"></script>
-[% END %]
-
 <!-- todo: inverse no longer supported -->
 <nav class="navbar fixed-top navbar-dark navbar-expand-lg">
   <!-- todo: navbar-inner no longer supported
@@ -193,6 +165,34 @@
 </nav>
 
 [% content %]
+
+<script src="[% uri_base %]/javascripts/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-3.1.0.js"></script>
+<script src="[% uri_base %]/javascripts/popper.min.js"></script>
+<script src="[% uri_base %]/javascripts/bootstrap.min.js"></script>
+<script src="[% uri_base %]/javascripts/jquery.datatables.min.js"></script>
+<script src="[% uri_base %]/javascripts/datatables.bootstrap4.min.js"></script>
+<script src="[% uri_base %]/javascripts/underscore.min.js"></script>
+<script src="[% uri_base %]/javascripts/jquery-deserialize.js"></script>
+<script src="[% uri_base %]/javascripts/jquery.typeahead.min.js"></script>
+<script src="[% uri_base %]/javascripts/he.js"></script>
+<script src="[% uri_base %]/javascripts/jquery.floatthead.min.js"></script>
+<script src="[% uri_base %]/javascripts/moment.min.js"></script>
+<script src="[% uri_base %]/javascripts/daterangepicker.js"></script>
+<script src="[% uri_base %]/javascripts/netdisco.js"></script>
+
+<script type="text/javascript">
+  var uri_base = '[% uri_base %]';
+  var nd_check_userlog = '[% settings.check_userlog %]';
+</script>
+
+[% IF user_has_role('port_control') %]
+<script src="[% uri_base %]/javascripts/netdisco_portcontrol.js"></script>
+[% END %]
+
+[% FOREACH add_js IN settings._additional_javascript %]
+<script src="[% uri_base %]/plugin/[% add_js %]/[% add_js %].js"></script>
+[% END %]
 
 <script type="text/javascript">
 [%+ INCLUDE 'js/common.js' -%]
