@@ -15,7 +15,7 @@ _build
 blib
 !.docker/hooks/*
 .idea
-/node_modules/
-/package.json
-/yarn.lock
-/.stylelintrc
+node_modules/*
+yarn.lock
+package.json
+.stylelintrc
