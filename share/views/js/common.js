@@ -38,7 +38,7 @@
 
       if (push.length) {
         var target = uri_base + '/' + path + '/' + tab + query;
-        if (location.pathname == target) { return };
+        if (location.pathname === target) { return; };
         window.History.pushState(
           {name: tab, fields: $(form).serializeArray()}, pgtitle, target
         );
