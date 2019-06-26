@@ -1,6 +1,7 @@
 TODO:
 
 resources:
+  https://www.w3.org/TR/html/ (current html standard syntax)
   https://developer.mozilla.org/en-US/docs/Learn (most inclusive omnibus on web standards)
   https://www.w3schools.com/ (overview of most of the things you need to know or consider)
   https://standardjs.com/ ("standard" formatting guidelines for javascript)
@@ -44,7 +45,7 @@ major items:
       http://api.jquery.com/jquery.param/
  * move netdisco css to scss format
  * how to handle "csrftoken"
- * netmap/d3 tables have not been considered at all (was blind upgrade to latest, -force not been considered)
+ * netmap & d3 tables have not been considered at all (was blind upgrade to latest, -force not been considered)
  * csv export, is tt the way to go or use datatables plugin?
  * draft target specs/standards we aim for
  * typeahead needs to be revised
@@ -55,9 +56,17 @@ follow-up:
  * figure out a way to handle external deps (like jquery versions, bootstrap css templates)
  * code style/linting guidelines & config files
 
+targets:
+ * html5 or xhtml5?
+  * which version of html5, at the time of writing html5.2 seems to be the most current spec
+  * xhtml5 is more strict as html5, but also leaves less room for confusion on things that should be irrelevant
+    like wether or not to include closing tags, upper/lower/mixed case, etc...
+ * css3
+ * ecmascript 6?
+ * responsive design seems to be the only option
 
-
-
+styleguide:
+ * include scripts in <head>, not at end of <body>. some templates use inline scripts which require netdisco.js (and most likely others) to be loaded alrdy.
 
 create regression framework:
  * validate web output:
@@ -92,14 +101,7 @@ create regression framework:
       * keeping dataset relevant will be a challenge
 
 
-targets:
- * html5 or xhtml5?
- * css3
- * ecmascript 6?
- * responsive design seems to be the only option
 
-styleguide:
- * include scripts in <head>, not at end of <body>. some templates use inline scripts which require netdisco.js (and most likely others) to be loaded alrdy.
 
 
 
