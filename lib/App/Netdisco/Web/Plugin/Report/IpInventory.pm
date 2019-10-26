@@ -117,7 +117,7 @@ get '/ajax/content/report/ipinventory' => require_login sub {
     my $rs;
     if ( $start and $end ) {
         $start = $start . ' 00:00:00';
-        $end   = $end . ' 23:59:59';
+        $end   = $end . ' 23:59:60';
 
         if ( $agenot ) {
             $rs = $rs_union->search(

@@ -19,7 +19,7 @@ get '/ajax/content/report/subnets' => require_login sub {
     my ( $start, $end ) = param('daterange') =~ /(\d+-\d+-\d+)/gmx;
 
     $start = $start . ' 00:00:00';
-    $end   = $end . ' 23:59:59';
+    $end   = $end . ' 23:59:60';
 
     my @results = schema('netdisco')->resultset('Virtual::SubnetUtilization')
       ->search(undef,{

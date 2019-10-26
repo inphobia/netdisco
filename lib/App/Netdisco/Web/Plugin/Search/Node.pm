@@ -34,7 +34,7 @@ ajax '/ajax/content/search/node' => require_login sub {
 
     if ( $start and $end ) {
         $start = $start . ' 00:00:00';
-        $end   = $end   . ' 23:59:59';
+        $end   = $end   . ' 23:59:60';
 
         if ($agenot) {
             @times = (-or => [
